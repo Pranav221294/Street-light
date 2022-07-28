@@ -1,0 +1,171 @@
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ADC_2
+OBJECT MODULE PLACED IN .\Objects\adc_2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\adc_2.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Inclu
+                    -de;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\adc_2.lst) TABS(2) OBJECT(.\Objects\adc_2.obj)
+
+line level    source
+
+   1          #include "MS51_16K.h"
+   2          #include "adc_2.h"
+   3          #include "pwm_2.h"
+   4          #include "mppt_track_1.h"
+   5          
+   6          
+   7          #define Voltage_Factor  0.00544
+   8          #define Battery_Factor  0.00540
+   9          #define Current_Factor_CHG  0.12 // factor charging current
+  10          #define Current_Factor_DCHG  1.55 //factor discharging current
+  11          #define Load_Voltage_Factor  0.00887636      // VOLTAGE FECTOR PER ADC VALUE = 0.00887636
+  12          #define MeasurementsToAverage 20
+  13          #define battery_offset 0.20
+  14          #define Solar_offset  0.00
+  15          //////////////Variable declaration///////////////
+  16          int timeout_count =0,i=0;
+  17          float AverageADC_CHG=0.00,AverageADC_DCHG=0.00;
+  18          /////////////////////////////////////////////////
+  19          
+  20          ////////////////////////////////////////////////////////////////////////////////
+  21          float SPV_VOLT = 0.00,BAT_VOLT=0.00,Load_Voltage=0.00,CHG_CRT=0.00,DCHG_CRT = 0.00;
+  22          unsigned int Temperature = 0;
+  23          int chgg =0,dischgg =0;
+  24          float BAT_PWR = 0.00,SPV_CRT = 0.00,SPV_PWR =0.00,SSL_PWR=0.00;//SSL = Solar Street Light
+  25          float  Battery_State_Of_Charge = 0.00,Battery_Depth_Of_Discharge = 0.00;
+  26          
+  27          /////////////////////////////////////////////////////////////////////////////
+  28          void ADC_init()
+  29          {
+  30   1       //////////ADC channel//////////
+  31   1        P03_INPUT_MODE;   //SPV_pin
+  32   1        P04_INPUT_MODE;   //Battery Pin
+  33   1        P11_INPUT_MODE;   //Load Pin
+  34   1        P05_INPUT_MODE;   //Temp Pin
+  35   1        P30_INPUT_MODE;   //Charging Pin
+  36   1        P17_INPUT_MODE;   //Discharging Pin
+  37   1      
+  38   1        ENABLE_ADC_CH4; //Temp
+  39   1        ENABLE_ADC_CH5; //Battery Voltage
+  40   1        ENABLE_ADC_CH6; //Solar Voltage
+  41   1        ENABLE_ADC_CH7; //Load Voltage
+  42   1        ENABLE_ADC_CH0; //Discharging Pin
+  43   1        ENABLE_ADC_CH1; //Charging Pin
+  44   1      /////////////////////////////// 
+  45   1      
+  46   1       
+  47   1      
+  48   1      }
+  49          
+  50          
+  51          
+  52          ///////////////////main ADC single channel selection read//////// 
+  53          unsigned int ADC_read(unsigned char Channel)
+  54          { 
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 2   
+
+  55   1        register unsigned int value = 0x0000;
+  56   1        (ADCCON0)&=~(0xf);//Flush the chanel select
+  57   1         ADCCON0|=(Channel);
+  58   1      //   ADCCON1|=0X30;            /* clock divider */
+  59   1      //   ADCCON2|=0X0E;            /* AQT time */
+  60   1      //   AUXR1|=SET_BIT4;          /* ADC clock low speed */
+  61   1         clr_ADCCON0_ADCF;
+  62   1         set_ADCCON0_ADCS;
+  63   1         while(ADCF == 0);
+  64   1      //     while(ADCF == 0)
+  65   1      //  {
+  66   1      //    if(timeout_count++>2)
+  67   1      //    {
+  68   1      //      //P13=0;
+  69   1      //      return;
+  70   1      //    }
+  71   1      //  //  nop;
+  72   1      //  //  nop;
+  73   1      //  } 
+  74   1         
+  75   1        value = ADCRH;
+  76   1        value <<= 4;
+  77   1        value |= ADCRL;
+  78   1      //  DISABLE_ADC;
+  79   1        return value;
+  80   1      }
+  81          
+  82          /////////////////////Average Current Value of Charging and Discharging Current////////////////////
+  83          void Average_Charging_Value (void)
+  84          {
+  85   1        chgg  = ADC_read(1);
+  86   1         for( i = 0; i < MeasurementsToAverage; ++i)
+  87   1        {
+  88   2          AverageADC_CHG += ADC_read(1);
+  89   2          AverageADC_DCHG += ADC_read(0);
+  90   2          
+  91   2        }
+  92   1        AverageADC_CHG /= MeasurementsToAverage;
+  93   1        AverageADC_DCHG /= MeasurementsToAverage;
+  94   1        
+  95   1        CHG_CRT = (Current_Factor_CHG * AverageADC_CHG);
+  96   1        DCHG_CRT = ((Current_Factor_DCHG * AverageADC_DCHG)/1000);                
+  97   1      }
+  98          
+  99          float Average_Current_Value (unsigned char Channel)
+ 100          {
+ 101   1         for( i = 0; i < MeasurementsToAverage; ++i)
+ 102   1        {
+ 103   2          AverageADC_CHG += ADC_read(Channel);
+ 104   2        
+ 105   2        }
+ 106   1        AverageADC_CHG /= MeasurementsToAverage;
+ 107   1      
+ 108   1         return AverageADC_CHG; 
+ 109   1        
+ 110   1      }
+ 111          ////////////////////////ADC different channel//////////////////////////////////////////////////
+ 112          void multiple_channel_ADC_read()
+ 113          {
+ 114   1        Temperature =Average_Current_Value(4);//Temperature
+ 115   1        AverageADC_CHG =0;
+ 116   1        BAT_VOLT = (Average_Current_Value(5)*Battery_Factor)-0.20;//Battery Voltage
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 3   
+
+ 117   1        AverageADC_CHG =0;
+ 118   1        SPV_VOLT = Average_Current_Value(6)*Voltage_Factor;//Solar Panel
+ 119   1        AverageADC_CHG =0;
+ 120   1        Load_Voltage =Average_Current_Value(7)*Load_Voltage_Factor;//Load Voltage
+ 121   1        //Average_Charging_Value ();
+ 122   1        //Temperature =Average_Current_Value(4);
+ 123   1        
+ 124   1        CHG_CRT = (Current_Factor_CHG * Average_Current_Value (1));
+ 125   1        AverageADC_CHG =0; 
+ 126   1        DCHG_CRT = ((Current_Factor_DCHG * Average_Current_Value (0))/1000); 
+ 127   1        AverageADC_CHG =0;
+ 128   1      }
+ 129          ////////////////////////////////////Calulation using ADC/////////////
+ 130          void Calulation_using_ADC()
+ 131          {
+ 132   1       
+ 133   1        multiple_channel_ADC_read();
+ 134   1      
+ 135   1        BAT_PWR = BAT_VOLT * CHG_CRT ;// Battery Power
+ 136   1        SPV_CRT = ((BAT_PWR / SPV_VOLT) * 1.1);//Solar Current
+ 137   1        SPV_PWR = SPV_VOLT * SPV_CRT ;//Solar Power
+ 138   1        SSL_PWR = Load_Voltage * DCHG_CRT ;//Street light power
+ 139   1        Battery_State_Of_Charge = ((( BAT_VOLT - 12.2 ) / 2.3 ) * 100 ); //(((aval bat volt-bat low volt)/full b
+             -at v-low battry volt)*100)
+ 140   1        Battery_Depth_Of_Discharge = (( BAT_VOLT / 14.5 ) * 100 );
+ 141   1      
+ 142   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1443    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =     62       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

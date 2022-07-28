@@ -1,0 +1,142 @@
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CONDITION
+OBJECT MODULE PLACED IN .\Objects\condition.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\condition.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\I
+                    -nclude;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\condition.lst) TABS(2) OBJECT(.\Objects\condit
+                    -ion.obj)
+
+line level    source
+
+   1          #include "MS51_16K.h"
+   2          #include "adc_2.h"
+   3          #include "pwm_2.h"
+   4          #include "mppt_track_1.h"
+   5          #include "condition.h"
+   6          
+   7          enum { CHARG_INIT = 0,BAT_CONDITION = 1}
+   8          CHARG_STATE = CHARG_INIT ;
+   9          extern float SPV_PWR,BAT_VOLT,CHG_CRT,SPV_VOLT;
+  10          bit pwm_on_off=0;
+  11          bit over_voc_f = 0,over_current_f=0;
+  12          //enum { START = 0, CHECK = 1, FIX = 2, RETRY_PLUS = 3, RETRY_MINUS = 4 }
+  13          //extern enum MPPT_Track_State ;
+  14          extern int PWM;
+  15          extern xdata long unsigned int mppt_delay;
+  16          extern xdata  unsigned long  int ms;
+  17          ////////////////////////////////////////////////////////////////////////////////
+  18          void solar_charging_on_condition()
+  19          {
+  20   1        //printf("C11");
+  21   1        switch(CHARG_STATE)
+  22   1          {
+  23   2            case CHARG_INIT:
+  24   2            {
+  25   3              if(SPV_VOLT>17&&(pwm_on_off==1))
+  26   3              {
+  27   4                printf("A\n");
+  28   4                charging_side_initilzation();
+  29   4                pwm_on_off = 0;
+  30   4                CHARG_STATE = BAT_CONDITION;
+  31   4              }     
+  32   3            }
+  33   2              break;
+  34   2           
+  35   2          case BAT_CONDITION:
+  36   2          { 
+  37   3                  if(SPV_VOLT>17)//5T
+  38   3                  {//  printf("B1\n");
+  39   4                   if(CHG_CRT<=8.00)
+  40   4                   {          // printf("B2\n");
+  41   5                     if(BAT_VOLT >= 12.20 && BAT_VOLT < 13.75)
+  42   5                     {
+  43   6                           //set_PWM2(72);
+  44   6                       mppt_track();
+  45   6                  
+  46   6                     }
+  47   5                   if(BAT_VOLT >= 13.75 && BAT_VOLT < 14.50)
+  48   5                     {
+  49   6                       Battery_upto_95();
+  50   6                      // set_PWM2(65);
+  51   6                      // printf("B3\n");
+  52   6                   
+  53   6                     }
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 2   
+
+  54   5                   if(BAT_VOLT >=14.50)
+  55   5                     {
+  56   6                       charging_pwm_off();
+  57   6                    //   printf("C\n");
+  58   6                     }
+  59   5                     
+  60   5                  CHARG_STATE = BAT_CONDITION;
+  61   5                  }
+  62   4               } 
+  63   3              
+  64   3          } 
+  65   2            break;
+  66   2        
+  67   2        }
+  68   1      
+  69   1      
+  70   1        if(SPV_VOLT<15.50&&(!pwm_on_off))// Charging of condition
+  71   1        //if(SPV_VOLT<13.5) 
+  72   1        {
+  73   2          pwm_on_off =1;
+  74   2          P00 = 0;
+  75   2          P10 = 0;
+  76   2          charging_pwm_off();printf("D\n");CHARG_STATE = CHARG_INIT ;
+  77   2          DISABLE_TIMER0_INTERRUPT ;clr_TCON_TR0;
+  78   2          mppt_delay = 0;
+  79   2          ms = 0;
+  80   2           init();
+  81   2          //  MPPT_Track_State = 0;
+  82   2        }
+  83   1      
+  84   1      
+  85   1      }
+  86          
+  87          /////////////////////////////////////////////////////////////////////////////////////
+  88          void solar_fault()
+  89          {
+  90   1      
+  91   1      //  if(SPV_VOLT>22.00)
+  92   1      //  {
+  93   1      //   over_voc_f =1;printf("E");
+  94   1      //  }
+  95   1        
+  96   1      // if(CHG_CRT>8.00)
+  97   1      //  {
+  98   1      //   over_current_f =1;printf("F\n");
+  99   1      //  }
+ 100   1      
+ 101   1      //  if(over_voc_f||over_current_f)
+ 102   1      //  {
+ 103   1      //   charging_pwm_off();
+ 104   1      //   over_voc_f =0;printf("G\n");
+ 105   1      //   over_current_f =0;
+ 106   1      //    P00 = 0;
+ 107   1      //    P10 = 0;CHARG_STATE = CHARG_INIT ;
+ 108   1      //  }
+ 109   1        
+ 110   1      
+ 111   1        
+ 112   1      }
+ 113          //////////////////////////////////////////////////////////////////////////////
+
+
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 3   
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =    355    ----
+   CONSTANT SIZE    =      6    ----
+   XDATA SIZE       =      1    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =      3    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

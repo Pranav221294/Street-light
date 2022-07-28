@@ -1,0 +1,288 @@
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MPPT_TRACK_1
+OBJECT MODULE PLACED IN .\Objects\mppt_track_1.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\mppt_track_1.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Devic
+                    -e\Include;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\mppt_track_1.lst) TABS(2) OBJECT(.\Objects\
+                    -mppt_track_1.obj)
+
+line level    source
+
+   1          #include "MS51_16K.h"
+   2          #include "adc_2.h"
+   3          #include "pwm_2.h"
+   4          #include "mppt_track_1.h"
+   5          
+   6          #define FULL_BATT 1450
+   7          
+   8          xdata float CSP=0.00,VOLT_DIFF=0.00,CHG_CTRL_FACTOR=0.00;
+   9          extern float SPV_PWR,BAT_VOLT;
+  10          xdata int PWM = 50,PWM_DIFF=0;
+  11          xdata int MPPT_RETRY=0;
+  12          xdata int AVL_BATT = 0;
+  13          xdata long unsigned int mppt_delay = 0; 
+  14          xdata   char PWM_1[16]={0},PWR_1[16]={0},CSP_1[16]={0};
+  15          extern float SPV_PWR,BAT_VOLT,CHG_CRT,SPV_VOLT;
+  16          //enum { START = 0, CHECK = 1, FIX = 2, RETRY_PLUS = 3, RETRY_MINUS = 4 }
+  17          //MPPT_Track_State = START ;
+  18          //enum  { SLOW_START = 0,START = 1, CHECK = 2, FIX = 3, RETRY_PLUS = 4, RETRY_MINUS = 5}
+  19          //MPPT_Track_State = SLOW_START ;
+  20          //extern enum MPPT_Track_State mppt_state1;
+  21          
+  22          //enum MPPT_Track_State;
+  23          MPPT_Track_State mppt_state = START;
+  24          
+  25          //extern unsigned long  int systick();
+  26          //enum { SLOW_START = 0,START = 1, CHECK = 2, FIX = 3, RETRY_PLUS = 4, RETRY_MINUS = 5}
+  27          //MPPT_Track_State = SLOW_START ;
+  28          //////////////Mppt Track//////////
+  29          void mppt_track()//Battery b/w 12.20 to 13.75 with minimum current
+  30          {
+  31   1      
+  32   1      if(systick()- mppt_delay >= 100)
+  33   1      { 
+  34   2      switch (  mppt_state )  
+  35   2            { 
+  36   3              
+  37   3              case START:
+  38   3              {
+  39   4                printf("START\n");
+  40   4                CSP = 0;
+  41   4                PWM = 72;
+  42   4                PWM++;
+  43   4                set_PWMCON0_PWMRUN;
+  44   4                set_PWM2(PWM);         
+  45   4                mppt_state = CHECK;
+  46   4              }
+  47   3              break;
+  48   3              case CHECK:
+  49   3              {
+  50   4              
+  51   4                  //printf("Check1");
+  52   4                if ( SPV_PWR > CSP )
+  53   4                {
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 2   
+
+  54   5      //            printf("power up\n");
+  55   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+  56   5      //            printf(PWR_1);
+  57   5            
+  58   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+  59   5      //            printf(CSP_1);        
+  60   5                  CSP = 0;
+  61   5                  CSP = SPV_PWR;
+  62   5                  PWM++;
+  63   5                  set_PWMCON0_PWMRUN;
+  64   5                  set_PWM2(PWM);
+  65   5                  sprintf(PWM_1,"PWM:%d \n ",PWM);
+  66   5                  printf(PWM_1);
+  67   5                  
+  68   5                  
+  69   5                  mppt_state = CHECK;
+  70   5                }
+  71   4                if ( SPV_PWR < CSP )
+  72   4                {
+  73   5                  
+  74   5                //  printf("Check2\n");
+  75   5      //            printf("Power down\n  ");
+  76   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+  77   5      //            printf(PWR_1);
+  78   5            
+  79   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+  80   5      //            printf(CSP_1);
+  81   5                  
+  82   5                  
+  83   5                  CSP = SPV_PWR;
+  84   5                  PWM--;
+  85   5                  set_PWM2(PWM);
+  86   5                  set_PWMCON0_PWMRUN;
+  87   5      //            sprintf(PWM_1,"PWM:%d \n ",PWM);
+  88   5      //            printf(PWM_1);
+  89   5                  mppt_state = RETRY_PLUS;            
+  90   5                }
+  91   4              }
+  92   3              break;
+  93   3              case FIX:
+  94   3              {
+  95   4                 set_PWM2(PWM);
+  96   4                  set_PWMCON0_PWMRUN;
+  97   4                //printf("Fix\n");
+  98   4                CSP = SPV_PWR;
+  99   4      //            sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 100   4      //            printf(PWM_1);
+ 101   4                MPPT_RETRY++;
+ 102   4              
+ 103   4                if ( MPPT_RETRY > 500 )
+ 104   4                {
+ 105   5                //  printf("Fix\n");
+ 106   5                  
+ 107   5                    CSP = 0;
+ 108   5                    CSP = SPV_PWR;
+ 109   5                    PWM--;
+ 110   5                   set_PWM2(PWM);
+ 111   5                   set_PWMCON0_PWMRUN;
+ 112   5                  
+ 113   5                    mppt_state = RETRY_MINUS;
+ 114   5                    MPPT_RETRY = 0;
+ 115   5                }
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 3   
+
+ 116   4              }
+ 117   3              break;
+ 118   3              case RETRY_PLUS:
+ 119   3              {
+ 120   4                //  printf("RETRY_PLUS\n");
+ 121   4                  if ( SPV_PWR > CSP )
+ 122   4                  {
+ 123   5      //             printf("RETRY_PLUS SPV_PWR > CSP ");
+ 124   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 125   5      //            printf(PWR_1);
+ 126   5            
+ 127   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 128   5      //            printf(CSP_1);
+ 129   5                
+ 130   5                    
+ 131   5                    CSP = SPV_PWR;
+ 132   5                    PWM--;
+ 133   5                  //  printf("RETRY_PLUS1\n");
+ 134   5                    
+ 135   5                      set_PWM2(PWM);
+ 136   5                    set_PWMCON0_PWMRUN;
+ 137   5                    
+ 138   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 139   5      //              printf(PWM_1);
+ 140   5                    mppt_state = RETRY_PLUS;
+ 141   5                  }
+ 142   4                 if ( SPV_PWR < CSP )
+ 143   4                  {
+ 144   5      //            printf("RETRY_PLUS SPV_PWR < CSP ");
+ 145   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 146   5      //            printf(PWR_1);
+ 147   5      //      
+ 148   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 149   5      //            printf(CSP_1);
+ 150   5                 
+ 151   5                    
+ 152   5                    CSP = SPV_PWR;
+ 153   5                    PWM++;
+ 154   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 155   5      //              printf(PWM_1);
+ 156   5                    
+ 157   5                  set_PWM2(PWM);
+ 158   5                    set_PWMCON0_PWMRUN;
+ 159   5                    
+ 160   5                    mppt_state = FIX;
+ 161   5                                
+ 162   5                  }
+ 163   4              }
+ 164   3              break;
+ 165   3              case RETRY_MINUS:
+ 166   3              {
+ 167   4                  if ( SPV_PWR > CSP )
+ 168   4                  {
+ 169   5                    CSP = SPV_PWR;
+ 170   5                    PWM--;
+ 171   5                    printf("RETRY_Minus SPV_PWR > CSP  ");
+ 172   5                    sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 173   5                   printf(PWR_1);
+ 174   5      //      
+ 175   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 176   5      //            printf(CSP_1);
+ 177   5                    
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 4   
+
+ 178   5                    
+ 179   5                    set_PWM2(PWM);
+ 180   5                   set_PWMCON0_PWMRUN;
+ 181   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 182   5      //              printf(PWM_1);
+ 183   5                    
+ 184   5                    mppt_state = RETRY_MINUS;
+ 185   5                  }
+ 186   4                 if ( SPV_PWR < CSP )
+ 187   4                  {
+ 188   5                    
+ 189   5                    
+ 190   5                  CSP = SPV_PWR;
+ 191   5                    PWM++;    
+ 192   5      //              printf("RETRY_Minus SPV_PWR < CSP ");
+ 193   5      //              sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 194   5      //             printf(PWR_1);
+ 195   5            
+ 196   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 197   5      //            printf(CSP_1);
+ 198   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 199   5      //              printf(PWM_1);
+ 200   5                     set_PWM2(PWM);
+ 201   5                    set_PWMCON0_PWMRUN;             
+ 202   5                    mppt_state = RETRY_PLUS;          
+ 203   5                  }
+ 204   4                
+ 205   4              }
+ 206   3              break;
+ 207   3            }
+ 208   2      
+ 209   2      
+ 210   2        mppt_delay = systick();
+ 211   2      
+ 212   2      }   
+ 213   1      //      sprintf(PWR_1,"SPV_PWR:%0.2f ",SPV_PWR);
+ 214   1      //      printf(PWR_1);
+ 215   1      //      
+ 216   1      //      sprintf(CSP_1,"CSP_PWR:%0.2f \n",CSP);
+ 217   1      //      printf(CSP_1);
+ 218   1      //       set_PWM2(PWM);
+ 219   1      //      
+ 220   1      //      set_PWMCON0_LOAD;
+ 221   1      //      set_PWMCON0_PWMRUN;
+ 222   1            //sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 223   1           // printf(PWM_1);
+ 224   1      //      PWM_DIFF = PWM - 60;
+ 225   1      //      VOLT_DIFF = (FULL_BATT-(BAT_VOLT*100))/10 ;
+ 226   1      //      CHG_CTRL_FACTOR = PWM_DIFF / VOLT_DIFF ;    
+ 227   1      //        
+ 228   1          }
+ 229          
+ 230          /////////Battery upto 95/////////////
+ 231          void Battery_upto_95()//Battery b/w 13.75 to 14.50 with minimum current 
+ 232          {
+ 233   1      
+ 234   1          AVL_BATT = BAT_VOLT * 100;
+ 235   1          PWM =((FULL_BATT - AVL_BATT)/10)*CHG_CTRL_FACTOR;
+ 236   1          PWM = 60 + PWM ;
+ 237   1          PWM++;
+ 238   1          PWM++;
+ 239   1      
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 5   
+
+ 240   1        
+ 241   1        
+ 242   1          set_PWM2(PWM);
+ 243   1          set_PWMCON0_LOAD;
+ 244   1          set_PWMCON0_PWMRUN;
+ 245   1      
+ 246   1      }
+ 247          
+ 248          ///////////////////////
+ 249          void init()
+ 250          {
+ 251   1      enum { SLOW_START = 0,START = 1, CHECK = 2, FIX = 3, RETRY_PLUS = 4, RETRY_MINUS = 5}
+ 252   1      MPPT_Track_State = SLOW_START ;
+ 253   1      }
+ 254            
+ 255            
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =   1061    ----
+   CONSTANT SIZE    =     61    ----
+   XDATA SIZE       =     73       1
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)

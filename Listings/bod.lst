@@ -1,0 +1,109 @@
+C51 COMPILER V9.60.0.0   BOD                                                               07/28/2022 10:18:33 PAGE 1   
+
+
+C51 COMPILER V9.60.0.0, COMPILATION OF MODULE BOD
+OBJECT MODULE PLACED IN .\Objects\bod.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\bod.c OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Include;.\S
+                    -tdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\bod.lst) TABS(2) OBJECT(.\Objects\bod.obj)
+
+line level    source
+
+   1          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   2          /*                                                                                                        
+             - */
+   3          /* Copyright(c) 2020 Nuvoton Technology Corp. All rights reserved.                                        
+             - */
+   4          /*                                                                                                        
+             - */
+   5          /*--------------------------------------------------------------------------------------------------------
+             --*/
+   6          
+   7          //********************************************************************************************************
+             -***
+   8          //  Website: http://www.nuvoton.com
+   9          //  E-Mail : MicroC-8bit@nuvoton.com
+  10          //********************************************************************************************************
+             -***
+  11          
+  12          #include "MS51_16K.h"
+  13          
+  14          /**
+  15            * @brief BOD initial setting 
+  16            * @param[in] u8bodstatus define enable BOD status.
+  17            *                       - \ref Enable 
+  18            *                       - \ref Disable
+  19            * @param[in] u8bodlevel define BOD level.
+  20            *                       - \ref VBOD_1_8 (1.8V)
+  21            *                       - \ref VBOD_2_0 (2.0V)
+  22            *                       - \ref VBOD_2_4 (2.4V)
+  23            *                       - \ref VBOD_2_7 (2.7V)
+  24            *                       - \ref VBOD_3_0 (3.0V)
+  25            *                       - \ref VBOD_3_7 (3.7V)
+  26            *                       - \ref VBOD_4_4 (4.4V)
+  27            * @param[in] u8bodresetstatus define reset or not when BOD event trig.
+  28            *                       - \ref BOD_Reset_Enable
+  29            *                       - \ref BOD_Reset_Disable
+  30            * @return  None
+  31            * @note    None
+  32            * @exmaple :  BOD_Open(ENBALE,VBOD_2_0, BOD_Reset_Enable);
+  33            * @exmaple :  BOD_Open(Disable,0,0);
+  34          */
+  35          void BOD_Open(unsigned char u8bodstatus, unsigned char u8bodlevel, unsigned char u8bodresetstatus)
+  36          {
+  37   1           unsigned char sfrtemp;
+  38   1           SFRS=0; BODCON0=0;
+  39   1      
+  40   1           sfrtemp |= (u8bodlevel | u8bodresetstatus);          // BOD level select and reset status
+  41   1           sfrtemp |= (u8bodstatus<<7) & SET_BIT7;
+  42   1           TA=0xAA; TA=0x55; BODCON0=sfrtemp; 
+  43   1      }
+  44          
+  45          
+  46          /**
+  47            * @brief Low power BOD initial setting 
+C51 COMPILER V9.60.0.0   BOD                                                               07/28/2022 10:18:33 PAGE 2   
+
+  48            * @param[in] u8bodlevel define BOD level.
+  49            *                       - \ref LPBOD_MODE_NORMAL (Turn on BOD always)
+  50            *                       - \ref LPBOD_MODE_1 (Turn on BOD every 1.6ms)
+  51            *                       - \ref LPBOD_MODE_2 (Turn on BOD every 6.4ms)
+  52            *                       - \ref LPBOD_MODE_3 (Turn on BOD every 25.6ms)
+  53            * @return  None
+  54            * @note    None
+  55            * @exmaple :  BOD_LowPower(LPBOD_MODE3);
+  56          */
+  57          void BOD_LowPower(unsigned char u8LPBDD)
+  58          {
+  59   1           SFRS=0; BODCON1=0;
+  60   1           TA=0xAA;TA=0x55;BODCON1 |= u8LPBDD;
+  61   1      }
+  62          
+  63          /**
+  64            * @brief Low power BOD initial setting 
+  65            * @param[in] u8bodINTstatus define interrupt enable status when BOD event trig.
+  66            *                       - \ref ENABLE
+  67            *                       - \ref DISALBE 
+  68            * @return  None
+  69            * @note    None
+  70            * @exmaple :  BOD_LowPower(LPBOD_MODE3);
+  71          */
+  72          void BOD_Interrupt (unsigned char u8bodINTstatus)
+  73          {
+  74   1          IE &= CLR_BIT5;
+  75   1          IE |= (u8bodINTstatus<<5)&SET_BIT5;
+  76   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     53    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
