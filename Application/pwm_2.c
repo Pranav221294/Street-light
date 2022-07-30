@@ -137,5 +137,4 @@ void charging_pwm_off()
 {
   PWM3_P00_OUTPUT_DISABLE; 
   PWM2_P10_OUTPUT_DISABLE;
-
 }

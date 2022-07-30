@@ -1,0 +1,6 @@
+{
+    "files.associations": {
+        "PWM_Deadtime.C": "cpp",
+        "app_battery_charger.h": "c"
+    }
+}

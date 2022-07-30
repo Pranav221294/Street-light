@@ -1,13 +1,18 @@
 #include <stdio.h>
 #include "MS51_16K.h"
 #include "ms51_pwm.h"
+#define UART_BAUD_RATE 115200
 
 static void ms51_gpio_config(void)
 {
-	 P00_PUSHPULL_MODE;
-   P10_PUSHPULL_MODE;
-	 P00 = 0;
-	 P10 = 0;
+	/** uart pin */
+	P06_QUASI_MODE;
+	P07_QUASI_MODE;
+	/** pwm pin */
+	P00_PUSHPULL_MODE;
+	P10_PUSHPULL_MODE;
+	P00 = 0;
+	P10 = 0;
 }
 static void ms51_adc_config(void)
 {
@@ -32,24 +37,7 @@ static void ms51_adc_config(void)
 	set_ADCCON1_ADCEN;
 	clr_ADCCON0_ADCF;
 }
-void PWM_DEAD_TIME_VALUE(unsigned int DeadTimeData)
-{
-	unsigned char deadtmphigh, deadtmplow;
-	deadtmplow = DeadTimeData;
-	deadtmphigh = DeadTimeData >> 8;
-	BIT_TMP = EA;
-	EA = 0;
-	if (deadtmphigh == 0x01)
-	{
-		TA = 0xAA;
-		TA = 0x55;
-		PDTEN |= 0x10;
-	}
-	TA = 0xAA;
-	TA = 0x55;
-	PDTCNT = deadtmplow;
-	EA = BIT_TMP;
-}
+
 static void ms51_pwm_config(void)
 {
 	PWM3_P00_OUTPUT_ENABLE;
@@ -64,7 +52,8 @@ static void ms51_pwm_config(void)
 	PWM23_DEADTIME_ENABLE;
 	/* Insert the amount of dead time*/
 	// Dead time       = 47 <PDTEN.4+PDTCNT[7:0]>/Fsys = 47/Fsys = 47/24000000 = 2 us (max value)
-	PWM_DEAD_TIME_VALUE(47);
+	//PWM_DEAD_TIME_VALUE(47);
+	ms51_pwm_dead_time(47);
 	/* Set PWM Period*/
 	// PWM frequency   = Fpwm/((PWMPH,PWMPL)+1) = (16MHz/8)/(0x7CF+1) = 1KHz (1ms)
 	// PWM0 high duty  = PWM0H,PMW0L = 0x03CF = 1/2 PWM period
@@ -73,7 +62,8 @@ static void ms51_pwm_config(void)
 }
 static void ms51_uart_init(void)
 {
-	//
+	UART_Open(24000000, UART0_Timer3, UART_BAUD_RATE);
+	ENABLE_UART0_PRINTF;
 }
 void main(void)
 {
@@ -84,11 +74,12 @@ void main(void)
 	ms51_adc_config();
 	// init pwm
 	ms51_pwm_config();
-	//test 
+	//uart init 
+	ms51_uart_init();
+	// test
 	ms51_pwm_set_duty(50);
 	ms51_pwm_start();
 	while (1)
 	{
-
 	}
 }

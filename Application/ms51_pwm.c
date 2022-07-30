@@ -1,5 +1,25 @@
 #include "ms51_pwm.h"
 #include "MS51_16K.h"
+static int cached_dead_time;
+
+static void PWM_DEAD_TIME_VALUE(unsigned int  DeadTimeData)
+{
+    unsigned char deadtmphigh, deadtmplow;
+	deadtmplow = DeadTimeData;
+	deadtmphigh = DeadTimeData >> 8;
+	BIT_TMP = EA;
+	EA = 0;
+	if (deadtmphigh == 0x01)
+	{
+		TA = 0xAA;
+		TA = 0x55;
+		PDTEN |= 0x10;
+	}
+	TA = 0xAA;
+	TA = 0x55;
+	PDTCNT = deadtmplow;
+	EA = BIT_TMP;
+}
 void ms51_pwm_set_period(int period)
 {
     PWMPH = period >> 8;
@@ -37,8 +57,9 @@ float ms51_pwm_get_duty(void)
 }
 void ms51_pwm_start(void)
 {
-	  PWM3_P00_OUTPUT_ENABLE;
+	PWM3_P00_OUTPUT_ENABLE;
     PWM2_P10_OUTPUT_ENABLE;
+    PWM_DEAD_TIME_VALUE(cached_dead_time);
     set_PWMCON0_LOAD;
     set_PWMCON0_PWMRUN;
 }
@@ -48,4 +69,9 @@ void ms51_pwm_stop(void)
     PWM2_P10_OUTPUT_DISABLE;
     clr_PWMCON0_LOAD;
     clr_PWMCON0_PWMRUN;
+}
+void ms51_pwm_dead_time(unsigned int DeadTimeData)
+{
+    cached_dead_time=DeadTimeData
+    PWM_DEAD_TIME_VALUE(DeadTimeData);
 }
