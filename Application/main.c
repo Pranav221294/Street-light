@@ -4,6 +4,10 @@
 
 static void ms51_gpio_config(void)
 {
+	 P00_PUSHPULL_MODE;
+   P10_PUSHPULL_MODE;
+	 P00 = 0;
+	 P10 = 0;
 }
 static void ms51_adc_config(void)
 {
@@ -64,8 +68,8 @@ static void ms51_pwm_config(void)
 	/* Set PWM Period*/
 	// PWM frequency   = Fpwm/((PWMPH,PWMPL)+1) = (16MHz/8)/(0x7CF+1) = 1KHz (1ms)
 	// PWM0 high duty  = PWM0H,PMW0L = 0x03CF = 1/2 PWM period
-	PWMPH = 0x01;
-	PWMPL = 0x2B;
+	PWMPH = 0x02;
+	PWMPL = 0x57;
 }
 static void ms51_uart_init(void)
 {
@@ -75,6 +79,7 @@ void main(void)
 {
 	// init cloack sys according to app
 	MODIFY_HIRC(HIRC_24);
+	ms51_gpio_config();
 	// init adc
 	ms51_adc_config();
 	// init pwm

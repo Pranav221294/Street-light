@@ -1,6 +1,6 @@
 #include "ms51_pwm.h"
 #include "MS51_16K.h"
-void ms51_pwm_set_period(uint16_t period)
+void ms51_pwm_set_period(int period)
 {
     PWMPH = period >> 8;
     PWMPL = period & 0x00FF;
@@ -19,8 +19,9 @@ void ms51_pwm_set_duty(float duty)
         return;
     }
     pwm_value = period * (duty / 100.0);
-    PWM2H = pwm_value >> 8;
-    PWM2L = pwm_value & 0x00FF;
+    PWM2L = (pwm_value & 0x00FF);
+    PWM2H = ((pwm_value & 0xFF00) >> 8);
+    set_PWMCON0_LOAD;
 }
 float ms51_pwm_get_duty(void)
 {
@@ -36,15 +37,15 @@ float ms51_pwm_get_duty(void)
 }
 void ms51_pwm_start(void)
 {
-    PWM3_P00_OUTPUT_DISABLE;
-    PWM2_P10_OUTPUT_DISABLE;
+	  PWM3_P00_OUTPUT_ENABLE;
+    PWM2_P10_OUTPUT_ENABLE;
     set_PWMCON0_LOAD;
     set_PWMCON0_PWMRUN;
 }
 void ms51_pwm_stop(void)
 {
-    PWM3_P00_OUTPUT_ENABLE;
-    PWM2_P10_OUTPUT_ENABLE;
+    PWM3_P00_OUTPUT_DISABLE;
+    PWM2_P10_OUTPUT_DISABLE;
     clr_PWMCON0_LOAD;
     clr_PWMCON0_PWMRUN;
 }

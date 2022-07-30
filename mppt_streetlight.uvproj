@@ -462,49 +462,19 @@
           <GroupName>Application</GroupName>
           <Files>
             <File>
-              <FileName>adc_2.c</FileName>
+              <FileName>main.c</FileName>
               <FileType>1</FileType>
-              <FilePath>.\Application\adc_2.c</FilePath>
+              <FilePath>.\Application\main.c</FilePath>
             </File>
             <File>
-              <FileName>adc_2.h</FileName>
+              <FileName>ms51_pwm.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\Application\ms51_pwm.c</FilePath>
+            </File>
+            <File>
+              <FileName>ms51_pwm.h</FileName>
               <FileType>5</FileType>
-              <FilePath>.\Application\adc_2.h</FilePath>
-            </File>
-            <File>
-              <FileName>condition.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Application\condition.c</FilePath>
-            </File>
-            <File>
-              <FileName>condition.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Application\condition.h</FilePath>
-            </File>
-            <File>
-              <FileName>mppt_track_1.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Application\mppt_track_1.c</FilePath>
-            </File>
-            <File>
-              <FileName>mppt_track_1.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Application\mppt_track_1.h</FilePath>
-            </File>
-            <File>
-              <FileName>pwm_2.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Application\pwm_2.c</FilePath>
-            </File>
-            <File>
-              <FileName>pwm_2.h</FileName>
-              <FileType>5</FileType>
-              <FilePath>.\Application\pwm_2.h</FilePath>
-            </File>
-            <File>
-              <FileName>PWM_Deadtime.C</FileName>
-              <FileType>1</FileType>
-              <FilePath>.\Application\PWM_Deadtime.C</FilePath>
+              <FilePath>.\Application\ms51_pwm.h</FilePath>
             </File>
           </Files>
         </Group>
