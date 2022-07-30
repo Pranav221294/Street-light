@@ -51,12 +51,12 @@ switch (  mppt_state )
 						//printf("Check1");
 					if ( SPV_PWR > CSP )
 					{
-//						printf("power up\n");
-//						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-//			      printf(PWR_1);
+						printf("power up\n");
+						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+			      printf(PWR_1);
 			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);				
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);				
 						CSP = 0;
 						CSP = SPV_PWR;
 						PWM++;
@@ -72,20 +72,20 @@ switch (  mppt_state )
 					{
 						
 					//	printf("Check2\n");
-//						printf("Power down\n  ");
-//						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-//			      printf(PWR_1);
+						printf("Power down\n  ");
+						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+			      printf(PWR_1);
 			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);
 						
 						
 						CSP = SPV_PWR;
 						PWM--;
 						set_PWM2(PWM);
 			      set_PWMCON0_PWMRUN;
-//						sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		        printf(PWM_1);
+						sprintf(PWM_1,"PWM:%d \n ",PWM);
+		        printf(PWM_1);
 						mppt_state = RETRY_PLUS;						
 					}
 				}
@@ -94,10 +94,10 @@ switch (  mppt_state )
 				{
            set_PWM2(PWM);
 			      set_PWMCON0_PWMRUN;
-					//printf("Fix\n");
+					printf("Fix\n");
 					CSP = SPV_PWR;
-//	          sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		        printf(PWM_1);
+	          sprintf(PWM_1,"PWM:%d \n ",PWM);
+		        printf(PWM_1);
           MPPT_RETRY++;
 				
 					if ( MPPT_RETRY > 500 )
@@ -120,39 +120,39 @@ switch (  mppt_state )
 					//	printf("RETRY_PLUS\n");
 					  if ( SPV_PWR > CSP )
 					  {
-//						 printf("RETRY_PLUS SPV_PWR > CSP ");
-//						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-//			      printf(PWR_1);
+						 printf("RETRY_PLUS SPV_PWR > CSP ");
+						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+			      printf(PWR_1);
 			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);
 					
 							
 						  CSP = SPV_PWR;
 						  PWM--;
-						//	printf("RETRY_PLUS1\n");
+							printf("RETRY_PLUS1\n");
 							
 							  set_PWM2(PWM);
 			        set_PWMCON0_PWMRUN;
 							
-//							sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		          printf(PWM_1);
+							sprintf(PWM_1,"PWM:%d \n ",PWM);
+		          printf(PWM_1);
 						  mppt_state = RETRY_PLUS;
 					  }
 				   if ( SPV_PWR < CSP )
 					  {
-//						printf("RETRY_PLUS SPV_PWR < CSP ");
-//						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-//			      printf(PWR_1);
-//			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);
+						printf("RETRY_PLUS SPV_PWR < CSP ");
+						sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+			      printf(PWR_1);
+			
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);
 					 
 						  
 						  CSP = SPV_PWR;
 						  PWM++;
-//							sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		          printf(PWM_1);
+							sprintf(PWM_1,"PWM:%d \n ",PWM);
+		          printf(PWM_1);
 							
 						set_PWM2(PWM);
 			        set_PWMCON0_PWMRUN;
@@ -171,15 +171,15 @@ switch (  mppt_state )
 							printf("RETRY_Minus SPV_PWR > CSP  ");
 							sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
 			       printf(PWR_1);
-//			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);
+			
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);
 							
 							
   						set_PWM2(PWM);
 		         set_PWMCON0_PWMRUN;
-//							sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		          printf(PWM_1);
+							sprintf(PWM_1,"PWM:%d \n ",PWM);
+		          printf(PWM_1);
 						  
 							mppt_state = RETRY_MINUS;
 					  }
@@ -189,14 +189,14 @@ switch (  mppt_state )
 							
 						CSP = SPV_PWR;
 						  PWM++;		
-//							printf("RETRY_Minus SPV_PWR < CSP ");
-//							sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-//			       printf(PWR_1);
+							printf("RETRY_Minus SPV_PWR < CSP ");
+							sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+			       printf(PWR_1);
 			
-//		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-//		    	  printf(CSP_1);
-//							sprintf(PWM_1,"PWM:%d \n ",PWM);
-//		          printf(PWM_1);
+		    	  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+		    	  printf(CSP_1);
+							sprintf(PWM_1,"PWM:%d \n ",PWM);
+		          printf(PWM_1);
                set_PWM2(PWM);
 			        set_PWMCON0_PWMRUN;							
 						  mppt_state = RETRY_PLUS;					

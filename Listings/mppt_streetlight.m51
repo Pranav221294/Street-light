@@ -1,4 +1,4 @@
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/28/2022  10:34:16  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                    07/28/2022  11:32:04  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.2.0, INVOKED BY:
@@ -59,7 +59,7 @@ INPUT MODULES INCLUDED:
 
 LINK MAP OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 2
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 2
 
 
 
@@ -104,61 +104,61 @@ LINK MAP OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
             CODE    000EH     000FH     UNIT         ?PR?_UART_SEND_DATA?UART
             CODE    001DH     0006H     UNIT         ?CO?CONDITION
             CODE    0023H     0003H     ABSOLUTE     
-            CODE    0026H     0051H     UNIT         ?PR?_ADC_READ?ADC_2
-            CODE    0077H     0001H     UNIT         ?PR?SOLAR_FAULT?CONDITION
-                    0078H     0003H                  *** GAP ***
+            CODE    0026H     0052H     UNIT         ?PR?_ADC_READ?ADC_2
+            CODE    0078H     0001H     UNIT         ?PR?SOLAR_FAULT?CONDITION
+                    0079H     0002H                  *** GAP ***
             CODE    007BH     0003H     ABSOLUTE     
             CODE    007EH     08A2H     UNIT         ?C?LIB_CODE
-            CODE    0920H     0483H     UNIT         ?PR?PRINTF?PRINTF
-            CODE    0DA3H     0393H     UNIT         ?PR?MPPT_TRACK?MPPT_TRACK_1
-            CODE    1136H     028EH     UNIT         ?PR?_WRITEDATATOONEPAGE?EEPROM
-            CODE    13C4H     01DFH     UNIT         ?PR?ADC_INIT?ADC_2
-            CODE    15A3H     0197H     UNIT         ?PR?DISABLE_WDT_RESET_CONFIG?WATCHDOG
-            CODE    173AH     0182H     UNIT         ?PR?_TIMER3_DELAY?DELAY
-            CODE    18BCH     0167H     UNIT         ?PR?_WRITE_DATAFLASH_BYTE?EEPROM
-            CODE    1A23H     0162H     UNIT         ?PR?SOLAR_CHARGING_ON_CONDITION?CONDITION
-            CODE    1B85H     014FH     UNIT         ?PR?_TIMER2_DELAY?DELAY
-            CODE    1CD4H     0133H     UNIT         ?PR?PRINTING_PARAM?PWM_DEADTIME
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 3
+            CODE    0920H     0747H     UNIT         ?PR?MPPT_TRACK?MPPT_TRACK_1
+            CODE    1067H     0483H     UNIT         ?PR?PRINTF?PRINTF
+            CODE    14EAH     0293H     UNIT         ?PR?_WRITEDATATOONEPAGE?EEPROM
+            CODE    177DH     01DFH     UNIT         ?PR?ADC_INIT?ADC_2
+            CODE    195CH     01A9H     UNIT         ?PR?_UART_OPEN?UART
+            CODE    1B05H     0197H     UNIT         ?PR?DISABLE_WDT_RESET_CONFIG?WATCHDOG
+            CODE    1C9CH     0189H     UNIT         ?PR?_TIMER3_DELAY?DELAY
+            CODE    1E25H     0168H     UNIT         ?PR?SOLAR_CHARGING_ON_CONDITION?CONDITION
+            CODE    1F8DH     0167H     UNIT         ?PR?_WRITE_DATAFLASH_BYTE?EEPROM
+            CODE    20F4H     0156H     UNIT         ?PR?_TIMER2_DELAY?DELAY
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 3
 
 
-            CODE    1E07H     0122H     UNIT         ?PR?AVERAGE_CHARGING_VALUE?ADC_2
-            CODE    1F29H     0111H     UNIT         ?PR?_UART_OPEN?UART
-            CODE    203AH     010BH     UNIT         ?C_INITSEG
-            CODE    2145H     00FFH     UNIT         ?PR?_MODIFY_HIRC?SYS
-            CODE    2244H     00FCH     UNIT         ?PR?CALULATION_USING_ADC?ADC_2
-            CODE    2340H     00D0H     UNIT         ?PR?_TIMER0_DELAY?DELAY
-            CODE    2410H     00D0H     UNIT         ?PR?_TIMER1_DELAY?DELAY
-            CODE    24E0H     00C6H     UNIT         ?PR?MULTIPLE_CHANNEL_ADC_READ?ADC_2
-            CODE    25A6H     00BEH     UNIT         ?PR?_WRITE_DATAFLASH_ARRAY?EEPROM
-            CODE    2664H     00A0H     UNIT         ?PR?MAIN?PWM_DEADTIME
-            CODE    2704H     008FH     UNIT         ?PR?_AVERAGE_CURRENT_VALUE?ADC_2
-            CODE    2793H     008CH     UNIT         ?C_C51STARTUP
-            CODE    281FH     008CH     UNIT         ?PR?BATTERY_UPTO_95?MPPT_TRACK_1
-            CODE    28ABH     0089H     UNIT         ?PR?TIMER0_ISR?PWM_2
-            CODE    2934H     0087H     UNIT         ?PR?ENABLE_WDT_RESET_CONFIG?WATCHDOG
-            CODE    29BBH     0067H     UNIT         ?PR?_READ_DATAFLASH_ARRAY?EEPROM
-            CODE    2A22H     0062H     UNIT         ?PR?_CLOCKSWITCH?SYS
-            CODE    2A84H     0050H     UNIT         ?PR?CHARGING_SIDE_INITILZATION?PWM_2
-            CODE    2AD4H     0042H     UNIT         ?PR?_FSYSSELECT?SYS
-            CODE    2B16H     0041H     UNIT         ?CO?PWM_DEADTIME
-            CODE    2B57H     003DH     UNIT         ?CO?MPPT_TRACK_1
-            CODE    2B94H     0038H     UNIT         ?PR?_CLOCKENABLE?SYS
-            CODE    2BCCH     0036H     UNIT         ?PR?PWM_INIT?PWM_2
-            CODE    2C02H     0035H     UNIT         ?PR?ENABLE_UART0_VCOM_PRINTF_24M_115200?UART
-            CODE    2C37H     002AH     UNIT         ?PR?_CLOCKDISABLE?SYS
-            CODE    2C61H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
-            CODE    2C88H     0026H     UNIT         ?PR?SERIAL_ISR?UART
-            CODE    2CAEH     0026H     UNIT         ?PR?SERIALPORT1_ISR?UART
-            CODE    2CD4H     0025H     UNIT         ?PR?_PWM_DEAD_TIME_VALUE?PWM_2
-            CODE    2CF9H     001CH     UNIT         ?PR?_TIMER_INTERRUPT_ENABLE?DELAY
-            CODE    2D15H     000FH     UNIT         ?PR?SYSTICK?PWM_2
-            CODE    2D24H     0009H     UNIT         ?PR?_SET_PWM0?PWM_2
-            CODE    2D2DH     0009H     UNIT         ?PR?_SET_PWM2?PWM_2
-            CODE    2D36H     0009H     UNIT         ?PR?_SET_PWM3?PWM_2
-            CODE    2D3FH     0007H     UNIT         ?PR?_SET_PWM_PERIOD?PWM_2
-            CODE    2D46H     0007H     UNIT         ?PR?CHARGING_PWM_OFF?PWM_2
-            CODE    2D4DH     0006H     UNIT         ?PR?INIT?MPPT_TRACK_1
+            CODE    224AH     0134H     UNIT         ?PR?PRINTING_PARAM?PWM_DEADTIME
+            CODE    237EH     0123H     UNIT         ?PR?AVERAGE_CHARGING_VALUE?ADC_2
+            CODE    24A1H     010BH     UNIT         ?C_INITSEG
+            CODE    25ACH     0104H     UNIT         ?PR?_MODIFY_HIRC?SYS
+            CODE    26B0H     00FDH     UNIT         ?PR?CALULATION_USING_ADC?ADC_2
+            CODE    27ADH     00D5H     UNIT         ?PR?_TIMER0_DELAY?DELAY
+            CODE    2882H     00D5H     UNIT         ?PR?_TIMER1_DELAY?DELAY
+            CODE    2957H     00C6H     UNIT         ?PR?MULTIPLE_CHANNEL_ADC_READ?ADC_2
+            CODE    2A1DH     00C5H     UNIT         ?CO?MPPT_TRACK_1
+            CODE    2AE2H     00C1H     UNIT         ?PR?_WRITE_DATAFLASH_ARRAY?EEPROM
+            CODE    2BA3H     00A1H     UNIT         ?PR?MAIN?PWM_DEADTIME
+            CODE    2C44H     008FH     UNIT         ?PR?_AVERAGE_CURRENT_VALUE?ADC_2
+            CODE    2CD3H     008CH     UNIT         ?C_C51STARTUP
+            CODE    2D5FH     008CH     UNIT         ?PR?BATTERY_UPTO_95?MPPT_TRACK_1
+            CODE    2DEBH     0089H     UNIT         ?PR?TIMER0_ISR?PWM_2
+            CODE    2E74H     0087H     UNIT         ?PR?ENABLE_WDT_RESET_CONFIG?WATCHDOG
+            CODE    2EFBH     007DH     UNIT         ?PR?_CLOCKSWITCH?SYS
+            CODE    2F78H     0068H     UNIT         ?PR?_READ_DATAFLASH_ARRAY?EEPROM
+            CODE    2FE0H     0058H     UNIT         ?PR?_FSYSSELECT?SYS
+            CODE    3038H     0050H     UNIT         ?PR?CHARGING_SIDE_INITILZATION?PWM_2
+            CODE    3088H     0041H     UNIT         ?CO?PWM_DEADTIME
+            CODE    30C9H     0039H     UNIT         ?PR?_CLOCKENABLE?SYS
+            CODE    3102H     0036H     UNIT         ?PR?PWM_INIT?PWM_2
+            CODE    3138H     0035H     UNIT         ?PR?ENABLE_UART0_VCOM_PRINTF_24M_115200?UART
+            CODE    316DH     002AH     UNIT         ?PR?_CLOCKDISABLE?SYS
+            CODE    3197H     0027H     UNIT         ?PR?PUTCHAR?PUTCHAR
+            CODE    31BEH     0026H     UNIT         ?PR?SERIAL_ISR?UART
+            CODE    31E4H     0026H     UNIT         ?PR?SERIALPORT1_ISR?UART
+            CODE    320AH     0025H     UNIT         ?PR?_PWM_DEAD_TIME_VALUE?PWM_2
+            CODE    322FH     001CH     UNIT         ?PR?_TIMER_INTERRUPT_ENABLE?DELAY
+            CODE    324BH     000FH     UNIT         ?PR?SYSTICK?PWM_2
+            CODE    325AH     0009H     UNIT         ?PR?_SET_PWM0?PWM_2
+            CODE    3263H     0009H     UNIT         ?PR?_SET_PWM2?PWM_2
+            CODE    326CH     0009H     UNIT         ?PR?_SET_PWM3?PWM_2
+            CODE    3275H     0007H     UNIT         ?PR?_SET_PWM_PERIOD?PWM_2
+            CODE    327CH     0007H     UNIT         ?PR?CHARGING_PWM_OFF?PWM_2
+            CODE    3283H     0006H     UNIT         ?PR?INIT?MPPT_TRACK_1
 
 
 
@@ -179,7 +179,7 @@ SEGMENT                                             BIT_GROUP          DATA_GROU
   +--> ?PR?_UART_OPEN?UART
   +--> ?PR?CALULATION_USING_ADC?ADC_2
   +--> ?PR?SOLAR_CHARGING_ON_CONDITION?CONDI...
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 4
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 4
 
 
   +--> ?PR?PRINTING_PARAM?PWM_DEADTIME
@@ -237,9 +237,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   ----------------------------------
 
   -------         MODULE        ?C_STARTUP
-  C:2793H         SEGMENT       ?C_C51STARTUP
+  C:2CD3H         SEGMENT       ?C_C51STARTUP
   I:0023H         SEGMENT       ?STACK
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 5
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 5
 
 
   C:0000H         PUBLIC        ?C_STARTUP
@@ -250,7 +250,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   N:0000H         SYMBOL        IBPSTACK
   N:0100H         SYMBOL        IBPSTACKTOP
   N:0080H         SYMBOL        IDATALEN
-  C:2796H         SYMBOL        IDATALOOP
+  C:2CD6H         SYMBOL        IDATALOOP
   N:0000H         SYMBOL        PBPSTACK
   N:0100H         SYMBOL        PBPSTACKTOP
   N:0000H         SYMBOL        PDATALEN
@@ -259,18 +259,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   N:0000H         SYMBOL        PPAGEENABLE
   D:00A0H         SYMBOL        PPAGE_SFR
   D:0081H         SYMBOL        SP
-  C:2793H         SYMBOL        STARTUP1
+  C:2CD3H         SYMBOL        STARTUP1
   N:0000H         SYMBOL        XBPSTACK
   N:0000H         SYMBOL        XBPSTACKTOP
   N:0000H         SYMBOL        XDATALEN
   N:0000H         SYMBOL        XDATASTART
   C:0000H         LINE#         126
-  C:2793H         LINE#         133
-  C:2795H         LINE#         134
-  C:2796H         LINE#         135
-  C:2797H         LINE#         136
-  C:2799H         LINE#         185
-  C:279CH         LINE#         196
+  C:2CD3H         LINE#         133
+  C:2CD5H         LINE#         134
+  C:2CD6H         LINE#         135
+  C:2CD7H         LINE#         136
+  C:2CD9H         LINE#         185
+  C:2CDCH         LINE#         196
   -------         ENDMOD        ?C_STARTUP
 
   -------         MODULE        COMMON
@@ -299,7 +299,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   C:0007H         LINE#         16
   C:0007H         LINE#         18
   C:000AH         LINE#         19
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 6
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 6
 
 
   C:000AH         LINE#         20
@@ -315,10 +315,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:009CH         PUBLIC        EIE1
   B:00A8H.7       PUBLIC        EA
   D:00D8H         PUBLIC        PWMCON0
-  C:2340H         PUBLIC        _Timer0_Delay
-  C:2410H         PUBLIC        _Timer1_Delay
-  C:1B85H         PUBLIC        _Timer2_Delay
-  C:173AH         PUBLIC        _Timer3_Delay
+  C:27ADH         PUBLIC        _Timer0_Delay
+  C:2882H         PUBLIC        _Timer1_Delay
+  C:20F4H         PUBLIC        _Timer2_Delay
+  C:1C9CH         PUBLIC        _Timer3_Delay
   D:00A8H         PUBLIC        IE
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
@@ -347,7 +347,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:00C8H.2       PUBLIC        TR2
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
-  C:2CF9H         PUBLIC        _Timer_Interrupt_Enable
+  C:322FH         PUBLIC        _Timer_Interrupt_Enable
   D:00C9H         PUBLIC        T2MOD
   D:00C8H         PUBLIC        T2CON
   D:00C4H         PUBLIC        T3CON
@@ -359,28 +359,28 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0225H         SYMBOL        u16DLYUnit
   -------         DO            
   X:0227H         SYMBOL        TL0TMP
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 7
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 7
 
 
   D:0007H         SYMBOL        TH0TMP
   -------         ENDDO         
-  C:2340H         LINE#         28
-  C:2346H         LINE#         29
-  C:2346H         LINE#         32
-  C:2349H         LINE#         33
-  C:234FH         LINE#         34
-  C:2398H         LINE#         35
-  C:23E4H         LINE#         37
-  C:23EEH         LINE#         38
-  C:23EEH         LINE#         39
-  C:23F4H         LINE#         40
-  C:23F6H         LINE#         41
-  C:23F8H         LINE#         42
-  C:23FBH         LINE#         43
-  C:23FDH         LINE#         44
-  C:23FFH         LINE#         45
-  C:240DH         LINE#         46
-  C:240FH         LINE#         48
+  C:27ADH         LINE#         28
+  C:27B3H         LINE#         29
+  C:27B3H         LINE#         32
+  C:27B6H         LINE#         33
+  C:27BCH         LINE#         34
+  C:280AH         LINE#         35
+  C:2856H         LINE#         37
+  C:2860H         LINE#         38
+  C:2860H         LINE#         39
+  C:2866H         LINE#         40
+  C:2868H         LINE#         41
+  C:286AH         LINE#         42
+  C:286DH         LINE#         43
+  C:286FH         LINE#         44
+  C:2871H         LINE#         45
+  C:287FH         LINE#         46
+  C:2881H         LINE#         48
   -------         ENDPROC       _TIMER0_DELAY
   -------         PROC          _TIMER1_DELAY
   X:0228H         SYMBOL        u32SYSCLK
@@ -390,23 +390,23 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0230H         SYMBOL        TL1TMP
   D:0007H         SYMBOL        TH1TMP
   -------         ENDDO         
-  C:2410H         LINE#         63
-  C:2416H         LINE#         64
-  C:2416H         LINE#         67
-  C:2419H         LINE#         68
-  C:241FH         LINE#         69
-  C:2468H         LINE#         70
-  C:24B4H         LINE#         72
-  C:24BEH         LINE#         73
-  C:24BEH         LINE#         74
-  C:24C4H         LINE#         75
-  C:24C6H         LINE#         76
-  C:24C8H         LINE#         77
-  C:24CBH         LINE#         78
-  C:24CDH         LINE#         79
-  C:24CFH         LINE#         80
-  C:24DDH         LINE#         81
-  C:24DFH         LINE#         82
+  C:2882H         LINE#         63
+  C:2888H         LINE#         64
+  C:2888H         LINE#         67
+  C:288BH         LINE#         68
+  C:2891H         LINE#         69
+  C:28DFH         LINE#         70
+  C:292BH         LINE#         72
+  C:2935H         LINE#         73
+  C:2935H         LINE#         74
+  C:293BH         LINE#         75
+  C:293DH         LINE#         76
+  C:293FH         LINE#         77
+  C:2942H         LINE#         78
+  C:2944H         LINE#         79
+  C:2946H         LINE#         80
+  C:2954H         LINE#         81
+  C:2956H         LINE#         82
   -------         ENDPROC       _TIMER1_DELAY
   -------         PROC          _TIMER2_DELAY
   X:0206H         SYMBOL        u32SYSCLK
@@ -417,39 +417,39 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0212H         SYMBOL        TL2TMP
   D:0007H         SYMBOL        TH2TMP
   -------         ENDDO         
-  C:1B85H         LINE#         99
-  C:1B8BH         LINE#         100
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 8
+  C:20F4H         LINE#         99
+  C:20FAH         LINE#         100
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 8
 
 
-  C:1B8BH         LINE#         103
-  C:1B8EH         LINE#         104
-  C:1BBEH         LINE#         105
-  C:1BBEH         LINE#         106
-  C:1BC3H         LINE#         107
-  C:1BCBH         LINE#         108
-  C:1BD3H         LINE#         109
-  C:1BDBH         LINE#         110
-  C:1BE3H         LINE#         111
-  C:1BEBH         LINE#         112
-  C:1BF3H         LINE#         113
-  C:1BF9H         LINE#         114
-  C:1BF9H         LINE#         115
-  C:1BFBH         LINE#         116
-  C:1BFEH         LINE#         117
-  C:1C01H         LINE#         118
-  C:1C53H         LINE#         119
-  C:1CA8H         LINE#         120
-  C:1CB2H         LINE#         121
-  C:1CB2H         LINE#         122
-  C:1CB8H         LINE#         123
-  C:1CBAH         LINE#         124
-  C:1CBCH         LINE#         125
-  C:1CBFH         LINE#         126
-  C:1CC1H         LINE#         127
-  C:1CC3H         LINE#         128
-  C:1CD1H         LINE#         129
-  C:1CD3H         LINE#         130
+  C:20FAH         LINE#         103
+  C:20FDH         LINE#         104
+  C:212DH         LINE#         105
+  C:212DH         LINE#         106
+  C:2132H         LINE#         107
+  C:213AH         LINE#         108
+  C:2142H         LINE#         109
+  C:214AH         LINE#         110
+  C:2152H         LINE#         111
+  C:215AH         LINE#         112
+  C:2162H         LINE#         113
+  C:2168H         LINE#         114
+  C:2168H         LINE#         115
+  C:216AH         LINE#         116
+  C:216DH         LINE#         117
+  C:2170H         LINE#         118
+  C:21C8H         LINE#         119
+  C:221EH         LINE#         120
+  C:2228H         LINE#         121
+  C:2228H         LINE#         122
+  C:222EH         LINE#         123
+  C:2230H         LINE#         124
+  C:2232H         LINE#         125
+  C:2235H         LINE#         126
+  C:2237H         LINE#         127
+  C:2239H         LINE#         128
+  C:2247H         LINE#         129
+  C:2249H         LINE#         130
   -------         ENDPROC       _TIMER2_DELAY
   -------         PROC          _TIMER3_DELAY
   X:0213H         SYMBOL        u32SYSCLK
@@ -460,50 +460,50 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:021EH         SYMBOL        TL3TMP
   D:0007H         SYMBOL        TH3TMP
   -------         ENDDO         
-  C:173AH         LINE#         146
-  C:1740H         LINE#         147
-  C:1740H         LINE#         150
-  C:1743H         LINE#         151
-  C:1767H         LINE#         152
-  C:1767H         LINE#         153
-  C:176CH         LINE#         154
-  C:1774H         LINE#         155
-  C:177CH         LINE#         156
-  C:1784H         LINE#         157
-  C:178CH         LINE#         158
-  C:1794H         LINE#         159
-  C:179CH         LINE#         160
-  C:17A2H         LINE#         161
-  C:17A2H         LINE#         162
-  C:17ECH         LINE#         163
-  C:1839H         LINE#         164
-  C:1843H         LINE#         165
-  C:1843H         LINE#         166
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 9
+  C:1C9CH         LINE#         146
+  C:1CA2H         LINE#         147
+  C:1CA2H         LINE#         150
+  C:1CA5H         LINE#         151
+  C:1CC9H         LINE#         152
+  C:1CC9H         LINE#         153
+  C:1CCEH         LINE#         154
+  C:1CD6H         LINE#         155
+  C:1CDEH         LINE#         156
+  C:1CE6H         LINE#         157
+  C:1CEEH         LINE#         158
+  C:1CF6H         LINE#         159
+  C:1CFEH         LINE#         160
+  C:1D04H         LINE#         161
+  C:1D04H         LINE#         162
+  C:1D54H         LINE#         163
+  C:1DA2H         LINE#         164
+  C:1DACH         LINE#         165
+  C:1DACH         LINE#         166
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 9
 
 
-  C:1859H         LINE#         167
-  C:185FH         LINE#         168
-  C:1861H         LINE#         169
-  C:1877H         LINE#         170
-  C:187FH         LINE#         171
-  C:1895H         LINE#         172
-  C:18AAH         LINE#         173
-  C:18B8H         LINE#         174
-  C:18BBH         LINE#         175
+  C:1DC2H         LINE#         167
+  C:1DC8H         LINE#         168
+  C:1DCAH         LINE#         169
+  C:1DE0H         LINE#         170
+  C:1DE8H         LINE#         171
+  C:1DFEH         LINE#         172
+  C:1E13H         LINE#         173
+  C:1E21H         LINE#         174
+  C:1E24H         LINE#         175
   -------         ENDPROC       _TIMER3_DELAY
   -------         PROC          _TIMER_INTERRUPT_ENABLE
   D:0007H         SYMBOL        u8TM
-  C:2CF9H         LINE#         183
-  C:2CF9H         LINE#         184
-  C:2CF9H         LINE#         185
-  C:2D07H         LINE#         186
-  C:2D07H         LINE#         187
-  C:2D0AH         LINE#         188
-  C:2D0DH         LINE#         189
-  C:2D11H         LINE#         190
-  C:2D14H         LINE#         191
-  C:2D14H         LINE#         192
+  C:322FH         LINE#         183
+  C:322FH         LINE#         184
+  C:322FH         LINE#         185
+  C:323DH         LINE#         186
+  C:323DH         LINE#         187
+  C:3240H         LINE#         188
+  C:3243H         LINE#         189
+  C:3247H         LINE#         190
+  C:324AH         LINE#         191
+  C:324AH         LINE#         192
   -------         ENDPROC       _TIMER_INTERRUPT_ENABLE
   -------         ENDMOD        DELAY
 
@@ -516,7 +516,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:00A8H.7       PUBLIC        EA
   D:00D8H         PUBLIC        PWMCON0
   D:00A8H         PUBLIC        IE
-  C:18BCH         PUBLIC        _Write_DATAFLASH_BYTE
+  C:1F8DH         PUBLIC        _Write_DATAFLASH_BYTE
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
   D:0098H         PUBLIC        SCON
@@ -525,21 +525,21 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:00A5H         PUBLIC        IAPUEN
   D:00F8H         PUBLIC        SCON_1
   D:00A4H         PUBLIC        IAPTRG
-  C:29BBH         PUBLIC        _Read_DATAFLASH_ARRAY
+  C:2F78H         PUBLIC        _Read_DATAFLASH_ARRAY
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
-  C:25A6H         PUBLIC        _Write_DATAFLASH_ARRAY
+  C:2AE2H         PUBLIC        _Write_DATAFLASH_ARRAY
   D:00A7H         PUBLIC        IAPAH
   D:00AEH         PUBLIC        IAPFD
   D:00C8H         PUBLIC        T2CON
   D:00A6H         PUBLIC        IAPAL
   D:00AFH         PUBLIC        IAPCN
-  C:1136H         PUBLIC        _WriteDataToOnePage
+  C:14EAH         PUBLIC        _WriteDataToOnePage
   D:00D0H         PUBLIC        PSW
   X:008AH         PUBLIC        page_buffer
   -------         PROC          _WRITE_DATAFLASH_BYTE
   X:0242H         SYMBOL        u16EPAddr
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 10
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 10
 
 
   X:0244H         SYMBOL        u8EPData
@@ -548,36 +548,36 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0246H         SYMBOL        u16_addrl_r
   D:0006H         SYMBOL        RAMtmp
   -------         ENDDO         
-  C:18BCH         LINE#         22
-  C:18C7H         LINE#         23
-  C:18C7H         LINE#         24
-  C:18CAH         LINE#         29
-  C:18ECH         LINE#         31
-  C:18FFH         LINE#         32
-  C:18FFH         LINE#         33
-  C:1911H         LINE#         34
-  C:1920H         LINE#         35
-  C:1928H         LINE#         37
-  C:1940H         LINE#         40
-  C:1949H         LINE#         41
-  C:194CH         LINE#         42
-  C:194FH         LINE#         43
-  C:1962H         LINE#         44
-  C:1975H         LINE#         45
-  C:1978H         LINE#         46
-  C:198BH         LINE#         49
-  C:199EH         LINE#         50
-  C:19B1H         LINE#         51
-  C:19B4H         LINE#         52
-  C:19C7H         LINE#         53
-  C:19C7H         LINE#         54
-  C:19D1H         LINE#         55
-  C:19D4H         LINE#         56
-  C:19E1H         LINE#         57
-  C:19F4H         LINE#         58
-  C:19FCH         LINE#         59
-  C:1A0FH         LINE#         60
-  C:1A22H         LINE#         61
+  C:1F8DH         LINE#         22
+  C:1F98H         LINE#         23
+  C:1F98H         LINE#         24
+  C:1F9BH         LINE#         29
+  C:1FBDH         LINE#         31
+  C:1FD0H         LINE#         32
+  C:1FD0H         LINE#         33
+  C:1FE2H         LINE#         34
+  C:1FF1H         LINE#         35
+  C:1FF9H         LINE#         37
+  C:2011H         LINE#         40
+  C:201AH         LINE#         41
+  C:201DH         LINE#         42
+  C:2020H         LINE#         43
+  C:2033H         LINE#         44
+  C:2046H         LINE#         45
+  C:2049H         LINE#         46
+  C:205CH         LINE#         49
+  C:206FH         LINE#         50
+  C:2082H         LINE#         51
+  C:2085H         LINE#         52
+  C:2098H         LINE#         53
+  C:2098H         LINE#         54
+  C:20A2H         LINE#         55
+  C:20A5H         LINE#         56
+  C:20B2H         LINE#         57
+  C:20C5H         LINE#         58
+  C:20CDH         LINE#         59
+  C:20E0H         LINE#         60
+  C:20F3H         LINE#         61
   -------         ENDPROC       _WRITE_DATAFLASH_BYTE
   -------         PROC          _WRITE_DATAFLASH_ARRAY
   X:023AH         SYMBOL        u16_addr
@@ -588,26 +588,26 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0241H         SYMBOL        EPageAddr
   D:0005H         SYMBOL        cnt
   -------         ENDDO         
-  C:25A6H         LINE#         65
-  C:25B7H         LINE#         66
-  C:25B7H         LINE#         68
-  C:25CBH         LINE#         69
-  C:25E5H         LINE#         70
-  C:25ECH         LINE#         71
-  C:25ECH         LINE#         72
-  C:2608H         LINE#         73
-  C:2615H         LINE#         74
-  C:261EH         LINE#         75
-  C:262CH         LINE#         76
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 11
+  C:2AE2H         LINE#         65
+  C:2AF3H         LINE#         66
+  C:2AF3H         LINE#         68
+  C:2B07H         LINE#         69
+  C:2B21H         LINE#         70
+  C:2B28H         LINE#         71
+  C:2B28H         LINE#         72
+  C:2B44H         LINE#         73
+  C:2B52H         LINE#         74
+  C:2B5CH         LINE#         75
+  C:2B6BH         LINE#         76
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 11
 
 
-  C:263DH         LINE#         77
-  C:263FH         LINE#         78
-  C:264AH         LINE#         79
-  C:264AH         LINE#         80
-  C:2663H         LINE#         81
-  C:2663H         LINE#         82
+  C:2B7CH         LINE#         77
+  C:2B7EH         LINE#         78
+  C:2B89H         LINE#         79
+  C:2B89H         LINE#         80
+  C:2BA2H         LINE#         81
+  C:2BA2H         LINE#         82
   -------         ENDPROC       _WRITE_DATAFLASH_ARRAY
   -------         PROC          _READ_DATAFLASH_ARRAY
   X:0231H         SYMBOL        u16_addr
@@ -616,11 +616,11 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   -------         DO            
   X:0238H         SYMBOL        i
   -------         ENDDO         
-  C:29BBH         LINE#         84
-  C:29CCH         LINE#         85
-  C:29CCH         LINE#         87
-  C:29E7H         LINE#         88
-  C:2A21H         LINE#         89
+  C:2F78H         LINE#         84
+  C:2F89H         LINE#         85
+  C:2F89H         LINE#         87
+  C:2FA4H         LINE#         88
+  C:2FDFH         LINE#         89
   -------         ENDPROC       _READ_DATAFLASH_ARRAY
   -------         PROC          _WRITEDATATOONEPAGE
   X:0000H         SYMBOL        u16_addr
@@ -631,73 +631,73 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0007H         SYMBOL        offset
   X:0008H         SYMBOL        pCode
   X:000AH         SYMBOL        xd_tmp
-  C:1270H         SYMBOL        WriteDataToPage20
+  C:1629H         SYMBOL        WriteDataToPage20
   -------         ENDDO         
-  C:1136H         LINE#         92
-  C:1147H         LINE#         93
-  C:1147H         LINE#         98
-  C:115AH         LINE#         99
-  C:116DH         LINE#         101
-  C:117CH         LINE#         102
-  C:1185H         LINE#         103
-  C:1193H         LINE#         104
-  C:119BH         LINE#         105
-  C:11ACH         LINE#         106
-  C:11ACH         LINE#         107
-  C:11BFH         LINE#         108
-  C:11C7H         LINE#         109
-  C:11D1H         LINE#         110
-  C:11D1H         LINE#         111
-  C:11D4H         LINE#         112
-  C:11DDH         LINE#         113
-  C:11E0H         LINE#         114
-  C:11F1H         LINE#         115
-  C:11F1H         LINE#         116
-  C:1206H         LINE#         117
-  C:1219H         LINE#         118
-  C:121BH         LINE#         119
-  C:1223H         LINE#         120
-  C:1234H         LINE#         121
-  C:1234H         LINE#         122
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 12
+  C:14EAH         LINE#         92
+  C:14FBH         LINE#         93
+  C:14FBH         LINE#         98
+  C:150EH         LINE#         99
+  C:1521H         LINE#         101
+  C:1530H         LINE#         102
+  C:1539H         LINE#         103
+  C:1547H         LINE#         104
+  C:154FH         LINE#         105
+  C:1560H         LINE#         106
+  C:1560H         LINE#         107
+  C:1573H         LINE#         108
+  C:157BH         LINE#         109
+  C:1585H         LINE#         110
+  C:1585H         LINE#         111
+  C:1588H         LINE#         112
+  C:1591H         LINE#         113
+  C:1594H         LINE#         114
+  C:15A5H         LINE#         115
+  C:15A5H         LINE#         116
+  C:15BAH         LINE#         117
+  C:15CDH         LINE#         118
+  C:15CFH         LINE#         119
+  C:15D7H         LINE#         120
+  C:15E8H         LINE#         121
+  C:15E8H         LINE#         122
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 12
 
 
-  C:125BH         LINE#         123
-  C:1263H         LINE#         124
-  C:1270H         LINE#         125
-  C:1270H         LINE#         127
-  C:1270H         LINE#         128
-  C:1270H         LINE#         129
-  C:1281H         LINE#         130
-  C:1293H         LINE#         131
-  C:1293H         LINE#         132
-  C:12B2H         LINE#         133
-  C:12BAH         LINE#         134
-  C:12CAH         LINE#         135
-  C:12CAH         LINE#         136
-  C:12F3H         LINE#         137
-  C:12FBH         LINE#         139
-  C:12FBH         LINE#         140
-  C:1306H         LINE#         141
-  C:1309H         LINE#         142
-  C:130CH         LINE#         143
-  C:130FH         LINE#         144
-  C:1322H         LINE#         145
-  C:1325H         LINE#         146
-  C:1338H         LINE#         147
-  C:1338H         LINE#         148
-  C:1345H         LINE#         149
-  C:1358H         LINE#         150
-  C:135AH         LINE#         151
-  C:1362H         LINE#         152
-  C:1377H         LINE#         153
-  C:1377H         LINE#         154
-  C:139AH         LINE#         155
-  C:13A2H         LINE#         156
-  C:13ABH         LINE#         158
-  C:13ABH         LINE#         159
-  C:13BEH         LINE#         161
-  C:13C3H         LINE#         162
+  C:160FH         LINE#         123
+  C:1617H         LINE#         124
+  C:1626H         LINE#         125
+  C:1629H         LINE#         127
+  C:1629H         LINE#         128
+  C:1629H         LINE#         129
+  C:163AH         LINE#         130
+  C:164CH         LINE#         131
+  C:164CH         LINE#         132
+  C:166BH         LINE#         133
+  C:1673H         LINE#         134
+  C:1683H         LINE#         135
+  C:1683H         LINE#         136
+  C:16ACH         LINE#         137
+  C:16B4H         LINE#         139
+  C:16B4H         LINE#         140
+  C:16BFH         LINE#         141
+  C:16C2H         LINE#         142
+  C:16C5H         LINE#         143
+  C:16C8H         LINE#         144
+  C:16DBH         LINE#         145
+  C:16DEH         LINE#         146
+  C:16F1H         LINE#         147
+  C:16F1H         LINE#         148
+  C:16FEH         LINE#         149
+  C:1711H         LINE#         150
+  C:1713H         LINE#         151
+  C:171BH         LINE#         152
+  C:1730H         LINE#         153
+  C:1730H         LINE#         154
+  C:1753H         LINE#         155
+  C:175BH         LINE#         156
+  C:1764H         LINE#         158
+  C:1764H         LINE#         159
+  C:1777H         LINE#         161
+  C:177CH         LINE#         162
   -------         ENDPROC       _WRITEDATATOONEPAGE
   -------         ENDMOD        EEPROM
 
@@ -712,32 +712,32 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:00A8H.7       PUBLIC        EA
   D:00D8H         PUBLIC        PWMCON0
   D:000DH         PUBLIC        BYTE_TMP
-  C:2AD4H         PUBLIC        _FsysSelect
+  C:2FE0H         PUBLIC        _FsysSelect
   D:00A8H         PUBLIC        IE
   D:0096H         PUBLIC        CKSWT
   D:000EH         PUBLIC        SFRS_TMP
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
   D:0097H         PUBLIC        CKEN
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 13
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 13
 
 
   D:000FH         PUBLIC        TA_REG_TMP
-  C:2C37H         PUBLIC        _ClockDisable
+  C:316DH         PUBLIC        _ClockDisable
   B:0021H.7       PUBLIC        BIT_TMP
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:2B94H         PUBLIC        _ClockEnable
+  C:30C9H         PUBLIC        _ClockEnable
   D:009FH         PUBLIC        CHPCON
   D:0091H         PUBLIC        SFRS
   D:00F8H         PUBLIC        SCON_1
   D:00A4H         PUBLIC        IAPTRG
-  C:2145H         PUBLIC        _MODIFY_HIRC
+  C:25ACH         PUBLIC        _MODIFY_HIRC
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
   D:00A7H         PUBLIC        IAPAH
   D:00AEH         PUBLIC        IAPFD
-  C:2A22H         PUBLIC        _ClockSwitch
+  C:2EFBH         PUBLIC        _ClockSwitch
   D:00C8H         PUBLIC        T2CON
   D:00A6H         PUBLIC        IAPAL
   D:00AFH         PUBLIC        IAPCN
@@ -750,143 +750,144 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:000AH         SYMBOL        offset
   D:0006H         SYMBOL        trimvalue16bit
   -------         ENDDO         
-  C:2145H         LINE#         26
-  C:2145H         LINE#         27
-  C:2145H         LINE#         31
-  C:2148H         LINE#         32
-  C:2154H         LINE#         33
-  C:2154H         LINE#         34
-  C:2154H         LINE#         35
-  C:2157H         LINE#         36
-  C:2159H         LINE#         37
-  C:2159H         LINE#         38
-  C:2159H         LINE#         39
-  C:2159H         LINE#         40
-  C:215CH         LINE#         42
-  C:215CH         LINE#         43
-  C:215CH         LINE#         44
-  C:216FH         LINE#         45
-  C:2172H         LINE#         46
-  C:2175H         LINE#         47
-  C:2188H         LINE#         48
-  C:218BH         LINE#         49
-  C:218DH         LINE#         50
-  C:21A0H         LINE#         51
-  C:21A3H         LINE#         52
-  C:21A8H         LINE#         53
-  C:21A8H         LINE#         54
-  C:21A8H         LINE#         55
-  C:21BBH         LINE#         56
-  C:21C3H         LINE#         58
-  C:21C6H         LINE#         59
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 14
+  C:25ACH         LINE#         26
+  C:25ACH         LINE#         27
+  C:25ACH         LINE#         31
+  C:25AFH         LINE#         32
+  C:25BBH         LINE#         33
+  C:25BBH         LINE#         34
+  C:25BBH         LINE#         35
+  C:25BEH         LINE#         36
+  C:25C0H         LINE#         37
+  C:25C0H         LINE#         38
+  C:25C3H         LINE#         39
+  C:25C5H         LINE#         40
+  C:25C5H         LINE#         41
+  C:25C8H         LINE#         42
+  C:25C8H         LINE#         43
+  C:25C8H         LINE#         44
+  C:25DBH         LINE#         45
+  C:25DEH         LINE#         46
+  C:25E1H         LINE#         47
+  C:25F4H         LINE#         48
+  C:25F7H         LINE#         49
+  C:25F9H         LINE#         50
+  C:260CH         LINE#         51
+  C:260FH         LINE#         52
+  C:2614H         LINE#         53
+  C:2614H         LINE#         54
+  C:2614H         LINE#         55
+  C:2627H         LINE#         56
+  C:262FH         LINE#         58
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 14
 
 
-  C:21C9H         LINE#         60
-  C:21CCH         LINE#         61
-  C:21DFH         LINE#         62
-  C:21F4H         LINE#         63
-  C:21F4H         LINE#         64
-  C:21FAH         LINE#         65
-  C:2203H         LINE#         66
-  C:220DH         LINE#         68
-  C:2212H         LINE#         69
-  C:2212H         LINE#         70
-  C:2217H         LINE#         71
-  C:221EH         LINE#         73
-  C:221EH         LINE#         74
-  C:221EH         LINE#         75
-  C:221EH         LINE#         76
-  C:2221H         LINE#         77
-  C:2224H         LINE#         78
-  C:2227H         LINE#         79
-  C:222AH         LINE#         80
-  C:222DH         LINE#         81
-  C:2230H         LINE#         82
-  C:2243H         LINE#         83
+  C:2632H         LINE#         59
+  C:2635H         LINE#         60
+  C:2638H         LINE#         61
+  C:264BH         LINE#         62
+  C:2660H         LINE#         63
+  C:2660H         LINE#         64
+  C:2666H         LINE#         65
+  C:266FH         LINE#         66
+  C:2679H         LINE#         68
+  C:267EH         LINE#         69
+  C:267EH         LINE#         70
+  C:2683H         LINE#         71
+  C:268AH         LINE#         73
+  C:268AH         LINE#         74
+  C:268AH         LINE#         75
+  C:268AH         LINE#         76
+  C:268DH         LINE#         77
+  C:2690H         LINE#         78
+  C:2693H         LINE#         79
+  C:2696H         LINE#         80
+  C:2699H         LINE#         81
+  C:269CH         LINE#         82
+  C:26AFH         LINE#         83
   -------         ENDPROC       _MODIFY_HIRC
   -------         PROC          _FSYSSELECT
   D:0007H         SYMBOL        u8FsysMode
-  C:2AD4H         LINE#         95
-  C:2AD4H         LINE#         96
-  C:2AD4H         LINE#         97
-  C:2AE0H         LINE#         98
-  C:2AE0H         LINE#         100
-  C:2AE0H         LINE#         101
-  C:2AE5H         LINE#         102
-  C:2AEAH         LINE#         103
-  C:2AEAH         LINE#         106
-  C:2AEAH         LINE#         107
-  C:2AECH         LINE#         108
-  C:2AECH         LINE#         109
-  C:2AEEH         LINE#         112
-  C:2AEEH         LINE#         113
-  C:2AF3H         LINE#         114
-  C:2AF8H         LINE#         115
-  C:2AFDH         LINE#         116
-  C:2B02H         LINE#         117
-  C:2B15H         LINE#         118
-  C:2B15H         LINE#         119
-  C:2B15H         LINE#         120
+  C:2FE0H         LINE#         95
+  C:2FE0H         LINE#         96
+  C:2FE0H         LINE#         97
+  C:2FECH         LINE#         98
+  C:2FECH         LINE#         100
+  C:2FECH         LINE#         101
+  C:2FF1H         LINE#         102
+  C:2FF6H         LINE#         103
+  C:2FF7H         LINE#         106
+  C:2FF7H         LINE#         107
+  C:2FFCH         LINE#         108
+  C:300FH         LINE#         109
+  C:3010H         LINE#         112
+  C:3010H         LINE#         113
+  C:3015H         LINE#         114
+  C:301AH         LINE#         115
+  C:301FH         LINE#         116
+  C:3024H         LINE#         117
+  C:3037H         LINE#         118
+  C:3037H         LINE#         119
+  C:3037H         LINE#         120
   -------         ENDPROC       _FSYSSELECT
   -------         PROC          _CLOCKENABLE
   D:0007H         SYMBOL        u8FsysMode
-  C:2B94H         LINE#         122
-  C:2B94H         LINE#         123
-  C:2B94H         LINE#         124
-  C:2B9DH         LINE#         125
-  C:2B9DH         LINE#         127
-  C:2B9DH         LINE#         128
-  C:2BB0H         LINE#         129
-  C:2BBAH         LINE#         130
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 15
+  C:30C9H         LINE#         122
+  C:30C9H         LINE#         123
+  C:30C9H         LINE#         124
+  C:30D2H         LINE#         125
+  C:30D2H         LINE#         127
+  C:30D2H         LINE#         128
+  C:30E5H         LINE#         129
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 15
 
 
-  C:2BBAH         LINE#         132
-  C:2BBAH         LINE#         133
-  C:2BC3H         LINE#         134
-  C:2BCBH         LINE#         135
-  C:2BCBH         LINE#         136
-  C:2BCBH         LINE#         137
+  C:30EFH         LINE#         130
+  C:30F0H         LINE#         132
+  C:30F0H         LINE#         133
+  C:30F9H         LINE#         134
+  C:3101H         LINE#         135
+  C:3101H         LINE#         136
+  C:3101H         LINE#         137
   -------         ENDPROC       _CLOCKENABLE
   -------         PROC          _CLOCKDISABLE
   D:0007H         SYMBOL        u8FsysMode
-  C:2C37H         LINE#         139
-  C:2C37H         LINE#         140
-  C:2C37H         LINE#         141
-  C:2C3AH         LINE#         142
-  C:2C43H         LINE#         143
-  C:2C43H         LINE#         145
-  C:2C43H         LINE#         146
-  C:2C56H         LINE#         147
-  C:2C57H         LINE#         149
-  C:2C57H         LINE#         150
-  C:2C60H         LINE#         151
-  C:2C60H         LINE#         152
-  C:2C60H         LINE#         153
+  C:316DH         LINE#         139
+  C:316DH         LINE#         140
+  C:316DH         LINE#         141
+  C:3170H         LINE#         142
+  C:3179H         LINE#         143
+  C:3179H         LINE#         145
+  C:3179H         LINE#         146
+  C:318CH         LINE#         147
+  C:318DH         LINE#         149
+  C:318DH         LINE#         150
+  C:3196H         LINE#         151
+  C:3196H         LINE#         152
+  C:3196H         LINE#         153
   -------         ENDPROC       _CLOCKDISABLE
   -------         PROC          _CLOCKSWITCH
   D:0007H         SYMBOL        u8FsysMode
-  C:2A22H         LINE#         155
-  C:2A22H         LINE#         156
-  C:2A22H         LINE#         157
-  C:2A25H         LINE#         158
-  C:2A2BH         LINE#         159
-  C:2A37H         LINE#         160
-  C:2A37H         LINE#         162
-  C:2A37H         LINE#         163
-  C:2A46H         LINE#         164
-  C:2A46H         LINE#         165
-  C:2A48H         LINE#         167
-  C:2A48H         LINE#         168
-  C:2A5BH         LINE#         169
-  C:2A6AH         LINE#         170
-  C:2A6CH         LINE#         172
-  C:2A6CH         LINE#         173
-  C:2A7FH         LINE#         174
-  C:2A7FH         LINE#         175
-  C:2A7FH         LINE#         176
-  C:2A83H         LINE#         177
+  C:2EFBH         LINE#         155
+  C:2EFBH         LINE#         156
+  C:2EFBH         LINE#         157
+  C:2EFEH         LINE#         158
+  C:2F04H         LINE#         159
+  C:2F10H         LINE#         160
+  C:2F10H         LINE#         162
+  C:2F10H         LINE#         163
+  C:2F23H         LINE#         164
+  C:2F36H         LINE#         165
+  C:2F38H         LINE#         167
+  C:2F38H         LINE#         168
+  C:2F4BH         LINE#         169
+  C:2F5EH         LINE#         170
+  C:2F60H         LINE#         172
+  C:2F60H         LINE#         173
+  C:2F73H         LINE#         174
+  C:2F73H         LINE#         175
+  C:2F73H         LINE#         176
+  C:2F77H         LINE#         177
   -------         ENDPROC       _CLOCKSWITCH
   -------         ENDMOD        SYS
 
@@ -898,13 +899,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 16
+
+
   B:00A8H.7       PUBLIC        EA
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 16
-
-
   D:00D8H         PUBLIC        PWMCON0
   C:000EH         PUBLIC        _UART_Send_Data
-  C:2CAEH         PUBLIC        SerialPort1_ISR
+  C:31E4H         PUBLIC        SerialPort1_ISR
   D:00A8H         PUBLIC        IE
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
@@ -915,8 +916,8 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:00F8H.1       PUBLIC        TI_1
   D:0099H         PUBLIC        SBUF
   D:0087H         PUBLIC        PCON
-  C:1F29H         PUBLIC        _UART_Open
-  C:2C88H         PUBLIC        Serial_ISR
+  C:195CH         PUBLIC        _UART_Open
+  C:31BEH         PUBLIC        Serial_ISR
   D:0098H         PUBLIC        SCON
   X:024CH         PUBLIC        uart0_receive_data
   B:0021H.2       PUBLIC        uart0_receive_flag
@@ -927,7 +928,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0091H         PUBLIC        SFRS
   D:009AH         PUBLIC        SBUF_1
   D:00F8H         PUBLIC        SCON_1
-  C:2C02H         PUBLIC        Enable_UART0_VCOM_printf_24M_115200
+  C:3138H         PUBLIC        Enable_UART0_VCOM_printf_24M_115200
   D:00C6H         PUBLIC        RH3
   D:008DH         PUBLIC        TH1
   D:00C5H         PUBLIC        RL3
@@ -939,89 +940,89 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:008EH         PUBLIC        CKCON
   D:00D0H         PUBLIC        PSW
   -------         PROC          SERIAL_ISR
-  C:2C88H         LINE#         18
-  C:2C8EH         LINE#         20
-  C:2C90H         LINE#         22
-  C:2C93H         LINE#         23
-  C:2C93H         LINE#         24
-  C:2C95H         LINE#         25
-  C:2C9BH         LINE#         26
-  C:2C9DH         LINE#         27
-  C:2C9DH         LINE#         29
-  C:2CA0H         LINE#         30
-  C:2CA0H         LINE#         31
-  C:2CA3H         LINE#         32
-  C:2CA3H         LINE#         33
-  C:2CA5H         LINE#         34
-  C:2CA5H         LINE#         35
-  C:2CA5H         LINE#         37
-  C:2CA7H         LINE#         38
+  C:31BEH         LINE#         18
+  C:31C4H         LINE#         20
+  C:31C6H         LINE#         22
+  C:31C9H         LINE#         23
+  C:31C9H         LINE#         24
+  C:31CBH         LINE#         25
+  C:31D1H         LINE#         26
+  C:31D3H         LINE#         27
+  C:31D3H         LINE#         29
+  C:31D6H         LINE#         30
+  C:31D6H         LINE#         31
+  C:31D9H         LINE#         32
+  C:31D9H         LINE#         33
+  C:31DBH         LINE#         34
+  C:31DBH         LINE#         35
+  C:31DBH         LINE#         37
+  C:31DDH         LINE#         38
   -------         ENDPROC       SERIAL_ISR
   -------         PROC          SERIALPORT1_ISR
-  C:2CAEH         LINE#         42
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 17
 
 
-  C:2CB4H         LINE#         44
-  C:2CB6H         LINE#         46
-  C:2CB9H         LINE#         47
-  C:2CB9H         LINE#         48
-  C:2CBFH         LINE#         49
-  C:2CC1H         LINE#         50
-  C:2CC3H         LINE#         51
-  C:2CC3H         LINE#         53
-  C:2CC6H         LINE#         54
-  C:2CC6H         LINE#         55
-  C:2CC9H         LINE#         56
-  C:2CC9H         LINE#         57
-  C:2CCBH         LINE#         58
-  C:2CCBH         LINE#         59
-  C:2CCBH         LINE#         61
-  C:2CCDH         LINE#         62
+  C:31E4H         LINE#         42
+  C:31EAH         LINE#         44
+  C:31ECH         LINE#         46
+  C:31EFH         LINE#         47
+  C:31EFH         LINE#         48
+  C:31F5H         LINE#         49
+  C:31F7H         LINE#         50
+  C:31F9H         LINE#         51
+  C:31F9H         LINE#         53
+  C:31FCH         LINE#         54
+  C:31FCH         LINE#         55
+  C:31FFH         LINE#         56
+  C:31FFH         LINE#         57
+  C:3201H         LINE#         58
+  C:3201H         LINE#         59
+  C:3201H         LINE#         61
+  C:3203H         LINE#         62
   -------         ENDPROC       SERIALPORT1_ISR
   -------         PROC          _UART_OPEN
   X:01D6H         SYMBOL        u32SysClock
   X:01DAH         SYMBOL        u8UARTPort
   X:01DBH         SYMBOL        u32Baudrate
-  C:1F29H         LINE#         65
-  C:1F2FH         LINE#         66
-  C:1F2FH         LINE#         67
-  C:1F40H         LINE#         68
-  C:1F40H         LINE#         69
-  C:1F40H         LINE#         70
-  C:1F43H         LINE#         71
-  C:1F46H         LINE#         72
-  C:1F49H         LINE#         73
-  C:1F4CH         LINE#         74
-  C:1F62H         LINE#         75
-  C:1F8EH         LINE#         76
-  C:1F90H         LINE#         77
-  C:1F91H         LINE#         79
-  C:1F91H         LINE#         80
-  C:1F94H         LINE#         81
-  C:1F97H         LINE#         82
-  C:1F9AH         LINE#         83
-  C:1FB0H         LINE#         84
-  C:1FB0H         LINE#         85
-  C:1FB0H         LINE#         86
-  C:1FB0H         LINE#         87
-  C:1FB2H         LINE#         89
-  C:1FB2H         LINE#         90
-  C:1FB5H         LINE#         91
-  C:1FB8H         LINE#         92
-  C:1FF5H         LINE#         93
-  C:2024H         LINE#         94
-  C:2039H         LINE#         95
-  C:2039H         LINE#         96
-  C:2039H         LINE#         97
+  C:195CH         LINE#         65
+  C:1962H         LINE#         66
+  C:1962H         LINE#         67
+  C:1976H         LINE#         68
+  C:1976H         LINE#         69
+  C:1976H         LINE#         70
+  C:1979H         LINE#         71
+  C:197CH         LINE#         72
+  C:197FH         LINE#         73
+  C:1982H         LINE#         74
+  C:1998H         LINE#         75
+  C:19C4H         LINE#         76
+  C:19C6H         LINE#         77
+  C:19C7H         LINE#         79
+  C:19C7H         LINE#         80
+  C:19CAH         LINE#         81
+  C:19CDH         LINE#         82
+  C:19D0H         LINE#         83
+  C:19E6H         LINE#         84
+  C:1A22H         LINE#         85
+  C:1A5CH         LINE#         86
+  C:1A71H         LINE#         87
+  C:1A72H         LINE#         89
+  C:1A72H         LINE#         90
+  C:1A75H         LINE#         91
+  C:1A78H         LINE#         92
+  C:1AB5H         LINE#         93
+  C:1AEFH         LINE#         94
+  C:1B04H         LINE#         95
+  C:1B04H         LINE#         96
+  C:1B04H         LINE#         97
   -------         ENDPROC       _UART_OPEN
   -------         PROC          _UART_SEND_DATA
   D:0007H         SYMBOL        UARTPort
   D:0005H         SYMBOL        c
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 18
+
+
   C:000EH         LINE#         120
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 18
-
-
   C:000EH         LINE#         121
   C:000EH         LINE#         122
   C:0015H         LINE#         123
@@ -1035,12 +1036,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   C:001CH         LINE#         131
   -------         ENDPROC       _UART_SEND_DATA
   -------         PROC          ENABLE_UART0_VCOM_PRINTF_24M_115200
-  C:2C02H         LINE#         133
-  C:2C02H         LINE#         134
-  C:2C02H         LINE#         135
-  C:2C1BH         LINE#         136
-  C:2C32H         LINE#         137
-  C:2C36H         LINE#         138
+  C:3138H         LINE#         133
+  C:3138H         LINE#         134
+  C:3138H         LINE#         135
+  C:3151H         LINE#         136
+  C:3168H         LINE#         137
+  C:316CH         LINE#         138
   -------         ENDPROC       ENABLE_UART0_VCOM_PRINTF_24M_115200
   -------         ENDMOD        UART
 
@@ -1055,10 +1056,10 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:00A8H         PUBLIC        IE
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
-  C:15A3H         PUBLIC        Disable_WDT_Reset_Config
+  C:1B05H         PUBLIC        Disable_WDT_Reset_Config
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:2934H         PUBLIC        Enable_WDT_Reset_Config
+  C:2E74H         PUBLIC        Enable_WDT_Reset_Config
   D:009FH         PUBLIC        CHPCON
   D:00A5H         PUBLIC        IAPUEN
   D:00F8H         PUBLIC        SCON_1
@@ -1073,23 +1074,23 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:00D0H         PUBLIC        PSW
   D:00AAH         PUBLIC        WDCON
   -------         PROC          ENABLE_WDT_RESET_CONFIG
-  C:2934H         LINE#         13
-  C:2934H         LINE#         14
-  C:2934H         LINE#         15
-  C:2947H         LINE#         16
-  C:294AH         LINE#         17
-  C:294DH         LINE#         18
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 19
+  C:2E74H         LINE#         13
+  C:2E74H         LINE#         14
+  C:2E74H         LINE#         15
+  C:2E87H         LINE#         16
+  C:2E8AH         LINE#         17
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 19
 
 
-  C:2950H         LINE#         19
-  C:2953H         LINE#         20
-  C:2966H         LINE#         21
-  C:2979H         LINE#         22
-  C:2981H         LINE#         23
-  C:2994H         LINE#         24
-  C:29A7H         LINE#         25
-  C:29BAH         LINE#         26
+  C:2E8DH         LINE#         18
+  C:2E90H         LINE#         19
+  C:2E93H         LINE#         20
+  C:2EA6H         LINE#         21
+  C:2EB9H         LINE#         22
+  C:2EC1H         LINE#         23
+  C:2ED4H         LINE#         24
+  C:2EE7H         LINE#         25
+  C:2EFAH         LINE#         26
   -------         ENDPROC       ENABLE_WDT_RESET_CONFIG
   -------         PROC          DISABLE_WDT_RESET_CONFIG
   -------         DO            
@@ -1099,59 +1100,59 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0004H         SYMBOL        cf3
   D:0003H         SYMBOL        cf4
   -------         ENDDO         
-  C:15A3H         LINE#         37
-  C:15A3H         LINE#         38
-  C:15A3H         LINE#         41
-  C:15B6H         LINE#         42
-  C:15B9H         LINE#         43
-  C:15BBH         LINE#         44
-  C:15BEH         LINE#         45
-  C:15D1H         LINE#         46
-  C:15D3H         LINE#         47
-  C:15D6H         LINE#         48
-  C:15E9H         LINE#         49
-  C:15EBH         LINE#         50
-  C:15EEH         LINE#         51
-  C:1601H         LINE#         52
-  C:1603H         LINE#         53
-  C:1606H         LINE#         54
-  C:1619H         LINE#         55
-  C:161BH         LINE#         56
-  C:161EH         LINE#         57
-  C:1631H         LINE#         58
-  C:1633H         LINE#         59
-  C:1637H         LINE#         61
-  C:164AH         LINE#         62
-  C:164DH         LINE#         63
-  C:1650H         LINE#         64
-  C:1652H         LINE#         65
-  C:1655H         LINE#         66
-  C:1668H         LINE#         68
-  C:166BH         LINE#         69
-  C:166DH         LINE#         70
-  C:1680H         LINE#         71
-  C:1683H         LINE#         72
-  C:1687H         LINE#         73
-  C:169AH         LINE#         74
-  C:169DH         LINE#         75
-  C:16A1H         LINE#         76
-  C:16B4H         LINE#         77
-  C:16B7H         LINE#         78
-  C:16BBH         LINE#         79
-  C:16CEH         LINE#         80
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 20
+  C:1B05H         LINE#         37
+  C:1B05H         LINE#         38
+  C:1B05H         LINE#         41
+  C:1B18H         LINE#         42
+  C:1B1BH         LINE#         43
+  C:1B1DH         LINE#         44
+  C:1B20H         LINE#         45
+  C:1B33H         LINE#         46
+  C:1B35H         LINE#         47
+  C:1B38H         LINE#         48
+  C:1B4BH         LINE#         49
+  C:1B4DH         LINE#         50
+  C:1B50H         LINE#         51
+  C:1B63H         LINE#         52
+  C:1B65H         LINE#         53
+  C:1B68H         LINE#         54
+  C:1B7BH         LINE#         55
+  C:1B7DH         LINE#         56
+  C:1B80H         LINE#         57
+  C:1B93H         LINE#         58
+  C:1B95H         LINE#         59
+  C:1B99H         LINE#         61
+  C:1BACH         LINE#         62
+  C:1BAFH         LINE#         63
+  C:1BB2H         LINE#         64
+  C:1BB4H         LINE#         65
+  C:1BB7H         LINE#         66
+  C:1BCAH         LINE#         68
+  C:1BCDH         LINE#         69
+  C:1BCFH         LINE#         70
+  C:1BE2H         LINE#         71
+  C:1BE5H         LINE#         72
+  C:1BE9H         LINE#         73
+  C:1BFCH         LINE#         74
+  C:1BFFH         LINE#         75
+  C:1C03H         LINE#         76
+  C:1C16H         LINE#         77
+  C:1C19H         LINE#         78
+  C:1C1DH         LINE#         79
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 20
 
 
-  C:16D1H         LINE#         81
-  C:16D5H         LINE#         82
-  C:16E8H         LINE#         84
-  C:16FBH         LINE#         85
-  C:170EH         LINE#         86
-  C:1713H         LINE#         87
-  C:1713H         LINE#         88
-  C:1726H         LINE#         89
-  C:1739H         LINE#         90
-  C:1739H         LINE#         91
+  C:1C30H         LINE#         80
+  C:1C33H         LINE#         81
+  C:1C37H         LINE#         82
+  C:1C4AH         LINE#         84
+  C:1C5DH         LINE#         85
+  C:1C70H         LINE#         86
+  C:1C75H         LINE#         87
+  C:1C75H         LINE#         88
+  C:1C88H         LINE#         89
+  C:1C9BH         LINE#         90
+  C:1C9BH         LINE#         91
   -------         ENDPROC       DISABLE_WDT_RESET_CONFIG
   -------         ENDMOD        WATCHDOG
 
@@ -1183,7 +1184,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:00E8H.6       PUBLIC        ADCS
   X:01AAH         PUBLIC        CHG_CRT
   X:01AEH         PUBLIC        SPV_VOLT
-  C:1E07H         PUBLIC        Average_Charging_Value
+  C:237EH         PUBLIC        Average_Charging_Value
   X:01B2H         PUBLIC        BAT_PWR
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
@@ -1193,42 +1194,42 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0091H         PUBLIC        SFRS
   X:01C2H         PUBLIC        SPV_CRT
   D:00F8H         PUBLIC        SCON_1
-  C:2244H         PUBLIC        Calulation_using_ADC
+  C:26B0H         PUBLIC        Calulation_using_ADC
   C:0026H         PUBLIC        _ADC_read
   X:01C6H         PUBLIC        SSL_PWR
   X:01CAH         PUBLIC        SPV_PWR
-  C:24E0H         PUBLIC        multiple_channel_ADC_read
+  C:2957H         PUBLIC        multiple_channel_ADC_read
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 21
+
+
   D:00E8H         PUBLIC        ADCCON0
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 21
-
-
   D:00E1H         PUBLIC        ADCCON1
   D:00C0H         PUBLIC        I2CON
   X:01CEH         PUBLIC        dischgg
-  C:13C4H         PUBLIC        ADC_init
+  C:177DH         PUBLIC        ADC_init
   X:01D0H         PUBLIC        DCHG_CRT
   D:00C3H         PUBLIC        ADCRH
   D:00C8H         PUBLIC        T2CON
   D:00C2H         PUBLIC        ADCRL
   X:01D4H         PUBLIC        i
-  C:2704H         PUBLIC        _Average_Current_Value
+  C:2C44H         PUBLIC        _Average_Current_Value
   D:00D0H         PUBLIC        PSW
   -------         PROC          ADC_INIT
-  C:13C4H         LINE#         28
-  C:13C4H         LINE#         29
-  C:13C4H         LINE#         31
-  C:13DDH         LINE#         32
-  C:13F5H         LINE#         33
-  C:140DH         LINE#         34
-  C:1425H         LINE#         35
-  C:143DH         LINE#         36
-  C:1455H         LINE#         38
-  C:148DH         LINE#         39
-  C:14C5H         LINE#         40
-  C:14FDH         LINE#         41
-  C:1535H         LINE#         42
-  C:156AH         LINE#         43
-  C:15A2H         LINE#         48
+  C:177DH         LINE#         28
+  C:177DH         LINE#         29
+  C:177DH         LINE#         31
+  C:1796H         LINE#         32
+  C:17AEH         LINE#         33
+  C:17C6H         LINE#         34
+  C:17DEH         LINE#         35
+  C:17F6H         LINE#         36
+  C:180EH         LINE#         38
+  C:1846H         LINE#         39
+  C:187EH         LINE#         40
+  C:18B6H         LINE#         41
+  C:18EEH         LINE#         42
+  C:1923H         LINE#         43
+  C:195BH         LINE#         48
   -------         ENDPROC       ADC_INIT
   -------         PROC          _ADC_READ
   D:0007H         SYMBOL        Channel
@@ -1246,64 +1247,66 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   C:005BH         LINE#         75
   C:0061H         LINE#         76
   C:006FH         LINE#         77
-  C:0073H         LINE#         79
-  C:0076H         LINE#         80
+  C:0074H         LINE#         79
+  C:0077H         LINE#         80
   -------         ENDPROC       _ADC_READ
   -------         PROC          AVERAGE_CHARGING_VALUE
-  C:1E07H         LINE#         83
-  C:1E07H         LINE#         84
-  C:1E07H         LINE#         85
-  C:1E14H         LINE#         86
-  C:1E1BH         LINE#         87
-  C:1E1BH         LINE#         88
-  C:1E4FH         LINE#         89
-  C:1E83H         LINE#         91
-  C:1EA5H         LINE#         92
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 22
+  C:237EH         LINE#         83
+  C:237EH         LINE#         84
+  C:237EH         LINE#         85
+  C:238BH         LINE#         86
+  C:2392H         LINE#         87
+  C:2392H         LINE#         88
+  C:23C6H         LINE#         89
+  C:23FAH         LINE#         91
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 22
 
 
-  C:1EC3H         LINE#         93
-  C:1EE1H         LINE#         95
-  C:1F00H         LINE#         96
+  C:241CH         LINE#         92
+  C:243AH         LINE#         93
+  C:2458H         LINE#         95
+  C:2477H         LINE#         96
+  C:24A0H         LINE#         97
   -------         ENDPROC       AVERAGE_CHARGING_VALUE
   -------         PROC          _AVERAGE_CURRENT_VALUE
   X:01D6H         SYMBOL        Channel
-  C:2704H         LINE#         99
-  C:2709H         LINE#         100
-  C:2709H         LINE#         101
-  C:2710H         LINE#         102
-  C:2710H         LINE#         103
-  C:2747H         LINE#         105
-  C:2766H         LINE#         106
-  C:2784H         LINE#         108
-  C:2792H         LINE#         110
+  C:2C44H         LINE#         99
+  C:2C49H         LINE#         100
+  C:2C49H         LINE#         101
+  C:2C50H         LINE#         102
+  C:2C50H         LINE#         103
+  C:2C87H         LINE#         105
+  C:2CA6H         LINE#         106
+  C:2CC4H         LINE#         108
+  C:2CD2H         LINE#         110
   -------         ENDPROC       _AVERAGE_CURRENT_VALUE
   -------         PROC          MULTIPLE_CHANNEL_ADC_READ
-  C:24E0H         LINE#         112
-  C:24E0H         LINE#         113
-  C:24E0H         LINE#         114
-  C:24F0H         LINE#         115
-  C:24FAH         LINE#         116
-  C:251BH         LINE#         117
-  C:2525H         LINE#         118
-  C:253BH         LINE#         119
-  C:2545H         LINE#         120
-  C:255BH         LINE#         124
-  C:2571H         LINE#         125
-  C:257BH         LINE#         126
-  C:259BH         LINE#         127
-  C:25A5H         LINE#         128
+  C:2957H         LINE#         112
+  C:2957H         LINE#         113
+  C:2957H         LINE#         114
+  C:2967H         LINE#         115
+  C:2971H         LINE#         116
+  C:2992H         LINE#         117
+  C:299CH         LINE#         118
+  C:29B2H         LINE#         119
+  C:29BCH         LINE#         120
+  C:29D2H         LINE#         124
+  C:29E8H         LINE#         125
+  C:29F2H         LINE#         126
+  C:2A12H         LINE#         127
+  C:2A1CH         LINE#         128
   -------         ENDPROC       MULTIPLE_CHANNEL_ADC_READ
   -------         PROC          CALULATION_USING_ADC
-  C:2244H         LINE#         130
-  C:2244H         LINE#         131
-  C:2244H         LINE#         133
-  C:2247H         LINE#         135
-  C:226CH         LINE#         136
-  C:229AH         LINE#         137
-  C:22BFH         LINE#         138
-  C:22E4H         LINE#         139
-  C:2318H         LINE#         140
+  C:26B0H         LINE#         130
+  C:26B0H         LINE#         131
+  C:26B0H         LINE#         133
+  C:26B3H         LINE#         135
+  C:26D8H         LINE#         136
+  C:2706H         LINE#         137
+  C:272BH         LINE#         138
+  C:2750H         LINE#         139
+  C:2784H         LINE#         140
+  C:27ACH         LINE#         142
   -------         ENDPROC       CALULATION_USING_ADC
   -------         ENDMOD        ADC_2
 
@@ -1316,17 +1319,17 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:00D8H         PUBLIC        PWMCON0
   D:00A8H         PUBLIC        IE
   D:00B8H         PUBLIC        IP
-  C:0077H         PUBLIC        solar_fault
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 23
+
+
+  C:0078H         PUBLIC        solar_fault
   B:0021H.4       PUBLIC        over_voc_f
   B:0080H.0       PUBLIC        P00
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 23
-
-
   B:0021H.5       PUBLIC        pwm_on_off
   B:0090H.0       PUBLIC        P10
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
-  C:1A23H         PUBLIC        solar_charging_on_condition
+  C:1E25H         PUBLIC        solar_charging_on_condition
   D:00F8H         PUBLIC        SCON_1
   B:00A8H.1       PUBLIC        ET0
   X:024EH         PUBLIC        CHARG_STATE
@@ -1337,65 +1340,65 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   B:0021H.6       PUBLIC        over_current_f
   D:00D0H         PUBLIC        PSW
   -------         PROC          SOLAR_CHARGING_ON_CONDITION
-  C:1A23H         LINE#         18
-  C:1A23H         LINE#         19
-  C:1A23H         LINE#         21
-  C:1A30H         LINE#         22
-  C:1A30H         LINE#         23
-  C:1A30H         LINE#         24
-  C:1A30H         LINE#         25
-  C:1A55H         LINE#         26
-  C:1A55H         LINE#         27
-  C:1A5EH         LINE#         28
-  C:1A61H         LINE#         29
-  C:1A63H         LINE#         30
-  C:1A63H         LINE#         31
-  C:1A63H         LINE#         32
-  C:1A63H         LINE#         33
-  C:1A66H         LINE#         35
-  C:1A66H         LINE#         36
-  C:1A66H         LINE#         37
-  C:1A85H         LINE#         38
-  C:1A85H         LINE#         39
-  C:1AA3H         LINE#         40
-  C:1AA3H         LINE#         41
-  C:1AD8H         LINE#         42
-  C:1AD8H         LINE#         44
-  C:1ADBH         LINE#         46
-  C:1ADBH         LINE#         47
-  C:1B0FH         LINE#         48
-  C:1B0FH         LINE#         49
-  C:1B12H         LINE#         53
-  C:1B12H         LINE#         54
-  C:1B2CH         LINE#         55
-  C:1B2CH         LINE#         56
-  C:1B2FH         LINE#         58
-  C:1B2FH         LINE#         60
-  C:1B35H         LINE#         61
-  C:1B35H         LINE#         62
-  C:1B35H         LINE#         64
-  C:1B35H         LINE#         65
-  C:1B35H         LINE#         67
-  C:1B35H         LINE#         70
-  C:1B52H         LINE#         72
-  C:1B52H         LINE#         73
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 24
+  C:1E25H         LINE#         18
+  C:1E25H         LINE#         19
+  C:1E25H         LINE#         21
+  C:1E32H         LINE#         22
+  C:1E32H         LINE#         23
+  C:1E32H         LINE#         24
+  C:1E32H         LINE#         25
+  C:1E57H         LINE#         26
+  C:1E57H         LINE#         27
+  C:1E60H         LINE#         28
+  C:1E63H         LINE#         29
+  C:1E65H         LINE#         30
+  C:1E6BH         LINE#         31
+  C:1E6BH         LINE#         32
+  C:1E6BH         LINE#         33
+  C:1E6EH         LINE#         35
+  C:1E6EH         LINE#         36
+  C:1E6EH         LINE#         37
+  C:1E8DH         LINE#         38
+  C:1E8DH         LINE#         39
+  C:1EABH         LINE#         40
+  C:1EABH         LINE#         41
+  C:1EE0H         LINE#         42
+  C:1EE0H         LINE#         44
+  C:1EE3H         LINE#         46
+  C:1EE3H         LINE#         47
+  C:1F17H         LINE#         48
+  C:1F17H         LINE#         49
+  C:1F1AH         LINE#         53
+  C:1F1AH         LINE#         54
+  C:1F34H         LINE#         55
+  C:1F34H         LINE#         56
+  C:1F37H         LINE#         58
+  C:1F37H         LINE#         60
+  C:1F3DH         LINE#         61
+  C:1F3DH         LINE#         62
+  C:1F3DH         LINE#         64
+  C:1F3DH         LINE#         65
+  C:1F3DH         LINE#         67
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 24
 
 
-  C:1B54H         LINE#         74
-  C:1B56H         LINE#         75
-  C:1B58H         LINE#         76
-  C:1B69H         LINE#         77
-  C:1B6DH         LINE#         78
-  C:1B77H         LINE#         79
-  C:1B81H         LINE#         80
-  C:1B84H         LINE#         82
-  C:1B84H         LINE#         85
+  C:1F3DH         LINE#         70
+  C:1F5AH         LINE#         72
+  C:1F5AH         LINE#         73
+  C:1F5CH         LINE#         74
+  C:1F5EH         LINE#         75
+  C:1F60H         LINE#         76
+  C:1F71H         LINE#         77
+  C:1F75H         LINE#         78
+  C:1F7FH         LINE#         79
+  C:1F89H         LINE#         80
+  C:1F8CH         LINE#         82
+  C:1F8CH         LINE#         85
   -------         ENDPROC       SOLAR_CHARGING_ON_CONDITION
   -------         PROC          SOLAR_FAULT
-  C:0077H         LINE#         88
-  C:0077H         LINE#         89
-  C:0077H         LINE#         112
+  C:0078H         LINE#         88
+  C:0078H         LINE#         89
+  C:0078H         LINE#         112
   -------         ENDPROC       SOLAR_FAULT
   -------         ENDMOD        CONDITION
 
@@ -1415,13 +1418,13 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   X:012EH         PUBLIC        mppt_delay
-  C:2D4DH         PUBLIC        init
+  C:3283H         PUBLIC        init
   X:0132H         PUBLIC        MPPT_RETRY
-  C:0DA3H         PUBLIC        mppt_track
+  C:0920H         PUBLIC        mppt_track
   X:0134H         PUBLIC        VOLT_DIFF
   D:00F8H         PUBLIC        SCON_1
   X:0138H         PUBLIC        mppt_state
-  C:281FH         PUBLIC        Battery_upto_95
+  C:2D5FH         PUBLIC        Battery_upto_95
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
   X:0139H         PUBLIC        CSP
@@ -1433,148 +1436,192 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0143H         PUBLIC        CSP_1
   D:00D0H         PUBLIC        PSW
   -------         PROC          MPPT_TRACK
-  C:0DA3H         LINE#         29
-  C:0DA3H         LINE#         30
-  C:0DA3H         LINE#         32
-  C:0DD0H         LINE#         33
-  C:0DD0H         LINE#         34
-  C:0DF0H         LINE#         35
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 25
+  C:0920H         LINE#         29
+  C:0920H         LINE#         30
+  C:0920H         LINE#         32
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 25
 
 
-  C:0DF0H         LINE#         37
-  C:0DF0H         LINE#         38
-  C:0DF0H         LINE#         39
-  C:0DF9H         LINE#         40
-  C:0E03H         LINE#         41
-  C:0E0CH         LINE#         42
-  C:0E17H         LINE#         43
-  C:0E19H         LINE#         44
-  C:0E24H         LINE#         45
-  C:0E2AH         LINE#         46
-  C:0E2AH         LINE#         47
-  C:0E2DH         LINE#         48
-  C:0E2DH         LINE#         49
-  C:0E2DH         LINE#         52
-  C:0E50H         LINE#         53
-  C:0E50H         LINE#         60
-  C:0E5AH         LINE#         61
-  C:0E6EH         LINE#         62
-  C:0E7CH         LINE#         63
-  C:0E7EH         LINE#         64
-  C:0E89H         LINE#         65
-  C:0EAFH         LINE#         66
-  C:0EB8H         LINE#         69
-  C:0EBEH         LINE#         70
-  C:0EBEH         LINE#         71
-  C:0EE2H         LINE#         72
-  C:0EE2H         LINE#         83
-  C:0EF6H         LINE#         84
-  C:0F04H         LINE#         85
-  C:0F04H         LINE#         86
-  C:0F04H         LINE#         89
-  C:0F04H         LINE#         90
-  C:0F04H         LINE#         91
-  C:0F04H         LINE#         92
-  C:0F07H         LINE#         93
-  C:0F07H         LINE#         94
-  C:0F07H         LINE#         95
-  C:0F12H         LINE#         96
-  C:0F14H         LINE#         98
-  C:0F28H         LINE#         101
-  C:0F36H         LINE#         103
-  C:0F4AH         LINE#         104
-  C:0F4AH         LINE#         107
-  C:0F54H         LINE#         108
-  C:0F68H         LINE#         109
-  C:0F76H         LINE#         110
-  C:0F7EH         LINE#         111
-  C:0F80H         LINE#         113
-  C:0F86H         LINE#         114
-  C:0F8DH         LINE#         115
-  C:0F8DH         LINE#         116
-  C:0F8DH         LINE#         117
-  C:0F90H         LINE#         118
-  C:0F90H         LINE#         119
-  C:0F90H         LINE#         121
-  C:0FB3H         LINE#         122
-  C:0FB3H         LINE#         131
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 26
+  C:094DH         LINE#         33
+  C:094DH         LINE#         34
+  C:096DH         LINE#         35
+  C:096DH         LINE#         37
+  C:096DH         LINE#         38
+  C:096DH         LINE#         39
+  C:0976H         LINE#         40
+  C:0980H         LINE#         41
+  C:0989H         LINE#         42
+  C:0994H         LINE#         43
+  C:0996H         LINE#         44
+  C:09A1H         LINE#         45
+  C:09A7H         LINE#         46
+  C:09A7H         LINE#         47
+  C:09AAH         LINE#         48
+  C:09AAH         LINE#         49
+  C:09AAH         LINE#         52
+  C:09D0H         LINE#         53
+  C:09D0H         LINE#         54
+  C:09D9H         LINE#         55
+  C:0A04H         LINE#         56
+  C:0A0DH         LINE#         58
+  C:0A38H         LINE#         59
+  C:0A41H         LINE#         60
+  C:0A4BH         LINE#         61
+  C:0A5FH         LINE#         62
+  C:0A6DH         LINE#         63
+  C:0A6FH         LINE#         64
+  C:0A7AH         LINE#         65
+  C:0AA0H         LINE#         66
+  C:0AA9H         LINE#         69
+  C:0AAFH         LINE#         70
+  C:0AAFH         LINE#         71
+  C:0AD3H         LINE#         72
+  C:0AD3H         LINE#         75
+  C:0ADCH         LINE#         76
+  C:0B07H         LINE#         77
+  C:0B10H         LINE#         79
+  C:0B3BH         LINE#         80
+  C:0B44H         LINE#         83
+  C:0B58H         LINE#         84
+  C:0B66H         LINE#         85
+  C:0B6EH         LINE#         86
+  C:0B70H         LINE#         87
+  C:0B96H         LINE#         88
+  C:0B9FH         LINE#         89
+  C:0BA5H         LINE#         90
+  C:0BA5H         LINE#         91
+  C:0BA5H         LINE#         92
+  C:0BA8H         LINE#         93
+  C:0BA8H         LINE#         94
+  C:0BA8H         LINE#         95
+  C:0BB3H         LINE#         96
+  C:0BB5H         LINE#         97
+  C:0BBEH         LINE#         98
+  C:0BD2H         LINE#         99
+  C:0BF8H         LINE#         100
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 26
 
 
-  C:0FC7H         LINE#         132
-  C:0FD5H         LINE#         135
-  C:0FDDH         LINE#         136
-  C:0FDFH         LINE#         140
-  C:0FE5H         LINE#         141
-  C:0FE5H         LINE#         142
-  C:1009H         LINE#         143
-  C:1009H         LINE#         152
-  C:101DH         LINE#         153
-  C:102BH         LINE#         157
-  C:1036H         LINE#         158
-  C:1038H         LINE#         160
-  C:103EH         LINE#         162
-  C:103EH         LINE#         163
-  C:103EH         LINE#         164
-  C:1041H         LINE#         165
-  C:1041H         LINE#         166
-  C:1041H         LINE#         167
-  C:1064H         LINE#         168
-  C:1064H         LINE#         169
-  C:1078H         LINE#         170
-  C:1086H         LINE#         171
-  C:108FH         LINE#         172
-  C:10BAH         LINE#         173
-  C:10C3H         LINE#         179
-  C:10CEH         LINE#         180
-  C:10D0H         LINE#         184
-  C:10D6H         LINE#         185
-  C:10D6H         LINE#         186
-  C:10F7H         LINE#         187
-  C:10F7H         LINE#         190
-  C:110BH         LINE#         191
-  C:1119H         LINE#         200
-  C:1124H         LINE#         201
-  C:1126H         LINE#         202
-  C:112CH         LINE#         203
-  C:112CH         LINE#         205
-  C:112CH         LINE#         206
-  C:112CH         LINE#         207
-  C:112CH         LINE#         210
-  C:1135H         LINE#         212
-  C:1135H         LINE#         228
+  C:0C01H         LINE#         101
+  C:0C0FH         LINE#         103
+  C:0C23H         LINE#         104
+  C:0C23H         LINE#         107
+  C:0C2DH         LINE#         108
+  C:0C41H         LINE#         109
+  C:0C4FH         LINE#         110
+  C:0C57H         LINE#         111
+  C:0C59H         LINE#         113
+  C:0C5FH         LINE#         114
+  C:0C66H         LINE#         115
+  C:0C66H         LINE#         116
+  C:0C66H         LINE#         117
+  C:0C69H         LINE#         118
+  C:0C69H         LINE#         119
+  C:0C69H         LINE#         121
+  C:0C8FH         LINE#         122
+  C:0C8FH         LINE#         123
+  C:0C98H         LINE#         124
+  C:0CC3H         LINE#         125
+  C:0CCCH         LINE#         127
+  C:0CF7H         LINE#         128
+  C:0D00H         LINE#         131
+  C:0D14H         LINE#         132
+  C:0D22H         LINE#         133
+  C:0D2BH         LINE#         135
+  C:0D36H         LINE#         136
+  C:0D38H         LINE#         138
+  C:0D5EH         LINE#         139
+  C:0D67H         LINE#         140
+  C:0D6DH         LINE#         141
+  C:0D6DH         LINE#         142
+  C:0D91H         LINE#         143
+  C:0D91H         LINE#         144
+  C:0D9AH         LINE#         145
+  C:0DC5H         LINE#         146
+  C:0DCEH         LINE#         148
+  C:0DF9H         LINE#         149
+  C:0E02H         LINE#         152
+  C:0E16H         LINE#         153
+  C:0E24H         LINE#         154
+  C:0E4AH         LINE#         155
+  C:0E53H         LINE#         157
+  C:0E5EH         LINE#         158
+  C:0E60H         LINE#         160
+  C:0E66H         LINE#         162
+  C:0E66H         LINE#         163
+  C:0E66H         LINE#         164
+  C:0E69H         LINE#         165
+  C:0E69H         LINE#         166
+  C:0E69H         LINE#         167
+  C:0E8FH         LINE#         168
+  C:0E8FH         LINE#         169
+  C:0EA3H         LINE#         170
+  C:0EB1H         LINE#         171
+  C:0EBAH         LINE#         172
+  C:0EE5H         LINE#         173
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 27
+
+
+  C:0EEEH         LINE#         175
+  C:0F19H         LINE#         176
+  C:0F22H         LINE#         179
+  C:0F2DH         LINE#         180
+  C:0F2FH         LINE#         181
+  C:0F55H         LINE#         182
+  C:0F5EH         LINE#         184
+  C:0F64H         LINE#         185
+  C:0F64H         LINE#         186
+  C:0F88H         LINE#         187
+  C:0F88H         LINE#         190
+  C:0F9CH         LINE#         191
+  C:0FAAH         LINE#         192
+  C:0FB3H         LINE#         193
+  C:0FDEH         LINE#         194
+  C:0FE7H         LINE#         196
+  C:1012H         LINE#         197
+  C:101BH         LINE#         198
+  C:1041H         LINE#         199
+  C:104AH         LINE#         200
+  C:1055H         LINE#         201
+  C:1057H         LINE#         202
+  C:105DH         LINE#         203
+  C:105DH         LINE#         205
+  C:105DH         LINE#         206
+  C:105DH         LINE#         207
+  C:105DH         LINE#         210
+  C:1066H         LINE#         212
+  C:1066H         LINE#         228
   -------         ENDPROC       MPPT_TRACK
   -------         PROC          BATTERY_UPTO_95
-  C:281FH         LINE#         231
-  C:281FH         LINE#         232
-  C:281FH         LINE#         234
-  C:2842H         LINE#         235
-  C:2876H         LINE#         236
-  C:2882H         LINE#         237
-  C:288DH         LINE#         238
-  C:289BH         LINE#         242
-  C:28A6H         LINE#         243
-  C:28A8H         LINE#         244
-  C:28AAH         LINE#         246
+  C:2D5FH         LINE#         231
+  C:2D5FH         LINE#         232
+  C:2D5FH         LINE#         234
+  C:2D82H         LINE#         235
+  C:2DB6H         LINE#         236
+  C:2DC2H         LINE#         237
+  C:2DCDH         LINE#         238
+  C:2DDBH         LINE#         242
+  C:2DE6H         LINE#         243
+  C:2DE8H         LINE#         244
+  C:2DEAH         LINE#         246
   -------         ENDPROC       BATTERY_UPTO_95
   -------         PROC          INIT
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 27
-
-
   -------         DO            
   X:01D6H         SYMBOL        MPPT_Track_State
   -------         ENDDO         
-  C:2D4DH         LINE#         249
-  C:2D4DH         LINE#         250
-  C:2D4DH         LINE#         252
-  C:2D52H         LINE#         253
+  C:3283H         LINE#         249
+  C:3283H         LINE#         250
+  C:3283H         LINE#         252
+  C:3288H         LINE#         253
   -------         ENDPROC       INIT
   -------         ENDMOD        MPPT_TRACK_1
 
   -------         MODULE        PWM_2
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00B1H         PUBLIC        P0M1
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 28
+
+
   D:00B3H         PUBLIC        P1M1
   D:00B2H         PUBLIC        P0M2
   D:0080H         PUBLIC        P0
@@ -1582,18 +1629,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0090H         PUBLIC        P1
   D:00A0H         PUBLIC        P2
   D:00B0H         PUBLIC        P3
-  C:28ABH         PUBLIC        Timer0_ISR
+  C:2DEBH         PUBLIC        Timer0_ISR
   B:00A8H.7       PUBLIC        EA
   D:00D8H         PUBLIC        PWMCON0
   D:00DFH         PUBLIC        PWMCON1
-  C:2D3FH         PUBLIC        _set_PWM_period
+  C:3275H         PUBLIC        _set_PWM_period
   D:00D1H         PUBLIC        PWMPH
   D:00A8H         PUBLIC        IE
-  C:2D15H         PUBLIC        systick
+  C:324BH         PUBLIC        systick
   D:00D9H         PUBLIC        PWMPL
   D:00C7H         PUBLIC        TA
   D:00B8H         PUBLIC        IP
-  C:2D46H         PUBLIC        charging_pwm_off
+  C:327CH         PUBLIC        charging_pwm_off
   B:00D8H.6       PUBLIC        LOAD
   B:0080H.0       PUBLIC        P00
   B:0090H.0       PUBLIC        P10
@@ -1608,21 +1655,18 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:008CH         PUBLIC        TH0
   D:00FAH         PUBLIC        PDTCNT
   D:008AH         PUBLIC        TL0
-  C:2D24H         PUBLIC        _set_PWM0
-  C:2CD4H         PUBLIC        _PWM_DEAD_TIME_VALUE
-  C:2D2DH         PUBLIC        _set_PWM2
-  C:2D36H         PUBLIC        _set_PWM3
+  C:325AH         PUBLIC        _set_PWM0
+  C:320AH         PUBLIC        _PWM_DEAD_TIME_VALUE
+  C:3263H         PUBLIC        _set_PWM2
+  C:326CH         PUBLIC        _set_PWM3
   B:0088H.4       PUBLIC        TR0
-  C:2A84H         PUBLIC        charging_side_initilzation
+  C:3038H         PUBLIC        charging_side_initilzation
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
   X:0248H         PUBLIC        ms
   D:00C8H         PUBLIC        T2CON
   B:00D8H.7       PUBLIC        PWMRUN
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 28
-
-
-  C:2BCCH         PUBLIC        pwm_init
+  C:3102H         PUBLIC        pwm_init
   D:00D2H         PUBLIC        PWM0H
   D:00D4H         PUBLIC        PWM2H
   D:008EH         PUBLIC        CKCON
@@ -1634,72 +1678,75 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:00D0H         PUBLIC        PSW
   D:00F9H         PUBLIC        PDTEN
   -------         PROC          TIMER0_ISR
-  C:28ABH         LINE#         11
-  C:28C8H         LINE#         13
-  C:28CAH         LINE#         15
-  C:28CDH         LINE#         16
-  C:28D0H         LINE#         17
-  C:28D2H         LINE#         18
-  C:28D4H         LINE#         19
-  C:28F3H         LINE#         20
-  C:290DH         LINE#         21
-  C:290DH         LINE#         22
-  C:2917H         LINE#         23
-  C:2917H         LINE#         24
-  C:2919H         LINE#         25
+  C:2DEBH         LINE#         11
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 29
+
+
+  C:2E08H         LINE#         13
+  C:2E0AH         LINE#         15
+  C:2E0DH         LINE#         16
+  C:2E10H         LINE#         17
+  C:2E12H         LINE#         18
+  C:2E14H         LINE#         19
+  C:2E33H         LINE#         20
+  C:2E4DH         LINE#         21
+  C:2E4DH         LINE#         22
+  C:2E57H         LINE#         23
+  C:2E57H         LINE#         24
+  C:2E59H         LINE#         25
   -------         ENDPROC       TIMER0_ISR
   -------         PROC          SYSTICK
-  C:2D15H         LINE#         27
-  C:2D15H         LINE#         28
-  C:2D15H         LINE#         30
-  C:2D23H         LINE#         33
+  C:324BH         LINE#         27
+  C:324BH         LINE#         28
+  C:324BH         LINE#         30
+  C:3259H         LINE#         33
   -------         ENDPROC       SYSTICK
   -------         PROC          PWM_INIT
-  C:2BCCH         LINE#         36
-  C:2BCCH         LINE#         37
-  C:2BCCH         LINE#         39
-  C:2BE5H         LINE#         40
-  C:2BFDH         LINE#         41
-  C:2BFFH         LINE#         42
-  C:2C01H         LINE#         46
+  C:3102H         LINE#         36
+  C:3102H         LINE#         37
+  C:3102H         LINE#         39
+  C:311BH         LINE#         40
+  C:3133H         LINE#         41
+  C:3135H         LINE#         42
+  C:3137H         LINE#         46
   -------         ENDPROC       PWM_INIT
   -------         PROC          _SET_PWM_PERIOD
   D:0006H         SYMBOL        value
-  C:2D3FH         LINE#         49
-  C:2D3FH         LINE#         50
-  C:2D3FH         LINE#         51
-  C:2D42H         LINE#         52
-  C:2D45H         LINE#         53
+  C:3275H         LINE#         49
+  C:3275H         LINE#         50
+  C:3275H         LINE#         51
+  C:3278H         LINE#         52
+  C:327BH         LINE#         53
   -------         ENDPROC       _SET_PWM_PERIOD
   -------         PROC          _SET_PWM0
   D:0006H         SYMBOL        value
-  C:2D24H         LINE#         56
-  C:2D24H         LINE#         57
-  C:2D24H         LINE#         58
-  C:2D27H         LINE#         59
-  C:2D2AH         LINE#         60
-  C:2D2CH         LINE#         61
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 29
-
-
+  C:325AH         LINE#         56
+  C:325AH         LINE#         57
+  C:325AH         LINE#         58
+  C:325DH         LINE#         59
+  C:3260H         LINE#         60
+  C:3262H         LINE#         61
   -------         ENDPROC       _SET_PWM0
   -------         PROC          _SET_PWM2
   D:0006H         SYMBOL        value
-  C:2D2DH         LINE#         63
-  C:2D2DH         LINE#         64
-  C:2D2DH         LINE#         65
-  C:2D30H         LINE#         66
-  C:2D33H         LINE#         67
-  C:2D35H         LINE#         68
+  C:3263H         LINE#         63
+  C:3263H         LINE#         64
+  C:3263H         LINE#         65
+  C:3266H         LINE#         66
+  C:3269H         LINE#         67
+  C:326BH         LINE#         68
   -------         ENDPROC       _SET_PWM2
   -------         PROC          _SET_PWM3
   D:0006H         SYMBOL        value
-  C:2D36H         LINE#         71
-  C:2D36H         LINE#         72
-  C:2D36H         LINE#         73
-  C:2D39H         LINE#         74
-  C:2D3CH         LINE#         75
-  C:2D3EH         LINE#         76
+  C:326CH         LINE#         71
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 30
+
+
+  C:326CH         LINE#         72
+  C:326CH         LINE#         73
+  C:326FH         LINE#         74
+  C:3272H         LINE#         75
+  C:3274H         LINE#         76
   -------         ENDPROC       _SET_PWM3
   -------         PROC          _PWM_DEAD_TIME_VALUE
   D:0006H         SYMBOL        DeadTimeData
@@ -1707,55 +1754,55 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   D:0007H         SYMBOL        deadtmphigh
   D:0005H         SYMBOL        deadtmplow
   -------         ENDDO         
-  C:2CD4H         LINE#         80
-  C:2CD4H         LINE#         81
-  C:2CD4H         LINE#         83
-  C:2CD6H         LINE#         84
-  C:2CD7H         LINE#         85
-  C:2CDBH         LINE#         86
-  C:2CDDH         LINE#         87
-  C:2CE1H         LINE#         88
-  C:2CE1H         LINE#         89
-  C:2CE4H         LINE#         90
-  C:2CE7H         LINE#         91
-  C:2CEAH         LINE#         92
-  C:2CEAH         LINE#         93
-  C:2CEDH         LINE#         94
-  C:2CF0H         LINE#         95
-  C:2CF4H         LINE#         96
-  C:2CF8H         LINE#         97
+  C:320AH         LINE#         80
+  C:320AH         LINE#         81
+  C:320AH         LINE#         83
+  C:320CH         LINE#         84
+  C:320DH         LINE#         85
+  C:3211H         LINE#         86
+  C:3213H         LINE#         87
+  C:3217H         LINE#         88
+  C:3217H         LINE#         89
+  C:321AH         LINE#         90
+  C:321DH         LINE#         91
+  C:3220H         LINE#         92
+  C:3220H         LINE#         93
+  C:3223H         LINE#         94
+  C:3226H         LINE#         95
+  C:322AH         LINE#         96
+  C:322EH         LINE#         97
   -------         ENDPROC       _PWM_DEAD_TIME_VALUE
   -------         PROC          CHARGING_SIDE_INITILZATION
-  C:2A84H         LINE#         99
-  C:2A84H         LINE#         100
-  C:2A84H         LINE#         101
-  C:2A87H         LINE#         102
-  C:2A8AH         LINE#         104
-  C:2A90H         LINE#         105
-  C:2A96H         LINE#         110
-  C:2A9DH         LINE#         111
-  C:2AA2H         LINE#         116
-  C:2AB5H         LINE#         117
-  C:2ABAH         LINE#         119
-  C:2ABCH         LINE#         120
-  C:2ABEH         LINE#         122
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 30
-
-
-  C:2AC4H         LINE#         123
-  C:2AC7H         LINE#         125
-  C:2ACAH         LINE#         126
-  C:2ACDH         LINE#         128
-  C:2ACFH         LINE#         129
-  C:2AD1H         LINE#         131
-  C:2AD3H         LINE#         134
+  C:3038H         LINE#         99
+  C:3038H         LINE#         100
+  C:3038H         LINE#         101
+  C:303BH         LINE#         102
+  C:303EH         LINE#         104
+  C:3044H         LINE#         105
+  C:304AH         LINE#         110
+  C:3051H         LINE#         111
+  C:3056H         LINE#         116
+  C:3069H         LINE#         117
+  C:306EH         LINE#         119
+  C:3070H         LINE#         120
+  C:3072H         LINE#         122
+  C:3078H         LINE#         123
+  C:307BH         LINE#         125
+  C:307EH         LINE#         126
+  C:3081H         LINE#         128
+  C:3083H         LINE#         129
+  C:3085H         LINE#         131
+  C:3087H         LINE#         134
   -------         ENDPROC       CHARGING_SIDE_INITILZATION
   -------         PROC          CHARGING_PWM_OFF
-  C:2D46H         LINE#         136
-  C:2D46H         LINE#         137
-  C:2D46H         LINE#         138
-  C:2D49H         LINE#         139
-  C:2D4CH         LINE#         141
+  C:327CH         LINE#         136
+  C:327CH         LINE#         137
+  C:327CH         LINE#         138
+  C:327FH         LINE#         139
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 31
+
+
+  C:3282H         LINE#         141
   -------         ENDPROC       CHARGING_PWM_OFF
   -------         ENDMOD        PWM_2
 
@@ -1782,7 +1829,7 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:016BH         PUBLIC        adc_read_delay
   B:0098H.1       PUBLIC        TI
   X:016DH         PUBLIC        print_delay
-  C:2664H         PUBLIC        main
+  C:2BA3H         PUBLIC        main
   D:0098H         PUBLIC        SCON
   D:0088H         PUBLIC        TCON
   X:016FH         PUBLIC        LODV
@@ -1793,51 +1840,52 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   X:0184H         PUBLIC        BAT
   D:00E8H         PUBLIC        ADCCON0
   D:00C0H         PUBLIC        I2CON
-  C:1CD4H         PUBLIC        printing_param
+  C:224AH         PUBLIC        printing_param
   D:00C8H         PUBLIC        T2CON
   X:018EH         PUBLIC        SPV
   D:00D0H         PUBLIC        PSW
   -------         PROC          MAIN
-  C:2664H         LINE#         53
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 31
+  C:2BA3H         LINE#         53
+  C:2BA3H         LINE#         54
+  C:2BA3H         LINE#         56
+  C:2BBCH         LINE#         57
+  C:2BBFH         LINE#         58
+  C:2BC2H         LINE#         60
+  C:2BDBH         LINE#         61
+  C:2BF3H         LINE#         63
+  C:2BF8H         LINE#         64
+  C:2C11H         LINE#         66
+  C:2C15H         LINE#         70
+  C:2C15H         LINE#         71
+  C:2C15H         LINE#         77
+  C:2C18H         LINE#         79
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 32
 
 
-  C:2664H         LINE#         54
-  C:2664H         LINE#         56
-  C:267DH         LINE#         57
-  C:2680H         LINE#         58
-  C:2683H         LINE#         60
-  C:269CH         LINE#         61
-  C:26B4H         LINE#         63
-  C:26B9H         LINE#         64
-  C:26D2H         LINE#         66
-  C:26D6H         LINE#         70
-  C:26D6H         LINE#         71
-  C:26D6H         LINE#         77
-  C:26D9H         LINE#         79
-  C:26DCH         LINE#         87
-  C:26EAH         LINE#         88
-  C:26FBH         LINE#         89
-  C:26FBH         LINE#         90
-  C:26FFH         LINE#         91
-  C:2702H         LINE#         93
-  C:2702H         LINE#         95
+  C:2C1BH         LINE#         87
+  C:2C29H         LINE#         88
+  C:2C3AH         LINE#         89
+  C:2C3AH         LINE#         90
+  C:2C3EH         LINE#         91
+  C:2C41H         LINE#         93
+  C:2C41H         LINE#         95
   -------         ENDPROC       MAIN
   -------         PROC          PRINTING_PARAM
-  C:1CD4H         LINE#         100
-  C:1CD4H         LINE#         101
-  C:1CD4H         LINE#         103
-  C:1CFFH         LINE#         104
-  C:1D08H         LINE#         105
-  C:1D33H         LINE#         106
-  C:1D3CH         LINE#         107
-  C:1D67H         LINE#         108
-  C:1D70H         LINE#         109
-  C:1D96H         LINE#         110
-  C:1D9FH         LINE#         111
-  C:1DCAH         LINE#         112
-  C:1DD3H         LINE#         113
-  C:1DFEH         LINE#         114
+  C:224AH         LINE#         100
+  C:224AH         LINE#         101
+  C:224AH         LINE#         103
+  C:2275H         LINE#         104
+  C:227EH         LINE#         105
+  C:22A9H         LINE#         106
+  C:22B2H         LINE#         107
+  C:22DDH         LINE#         108
+  C:22E6H         LINE#         109
+  C:230CH         LINE#         110
+  C:2315H         LINE#         111
+  C:2340H         LINE#         112
+  C:2349H         LINE#         113
+  C:2374H         LINE#         114
+  C:237DH         LINE#         117
   -------         ENDPROC       PRINTING_PARAM
   -------         ENDMOD        PWM_DEADTIME
 
@@ -1859,9 +1907,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   C:031CH         PUBLIC        ?C?FPCMP3
   -------         ENDMOD        ?C?FPCMP
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 32
-
-
   -------         MODULE        ?C?FCAST
   C:039FH         PUBLIC        ?C?FCASTC
   C:039AH         PUBLIC        ?C?FCASTI
@@ -1874,9 +1919,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
 
   -------         MODULE        PRINTF
   X:01D6H         PUBLIC        ?_PRINTF?BYTE
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 33
+
+
   X:01D6H         PUBLIC        ?_SPRINTF?BYTE
-  C:098BH         PUBLIC        _PRINTF
-  C:0985H         PUBLIC        _SPRINTF
+  C:10D2H         PUBLIC        _PRINTF
+  C:10CCH         PUBLIC        _SPRINTF
   -------         ENDMOD        PRINTF
 
   -------         MODULE        ?C?FPROUND
@@ -1919,9 +1967,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   C:06CCH         PUBLIC        ?C?LMUL
   -------         ENDMOD        ?C?LMUL
 
-BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  10:34:16  PAGE 33
-
-
   -------         MODULE        ?C?ULDIV
   C:0757H         PUBLIC        ?C?ULDIV
   -------         ENDMOD        ?C?ULDIV
@@ -1933,6 +1978,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   -------         MODULE        ?C?ULCMP
   C:07F7H         PUBLIC        ?C?ULCMP
   -------         ENDMOD        ?C?ULCMP
+
+BL51 BANKED LINKER/LOCATER V6.22.2.0                                                  07/28/2022  11:32:04  PAGE 34
+
 
   -------         MODULE        ?C?ULSHR
   C:0808H         PUBLIC        ?C?ULSHR
@@ -1963,12 +2011,12 @@ SYMBOL TABLE OF MODULE:  .\Objects\mppt_streetlight (?C_STARTUP)
   -------         ENDMOD        ?C?ICASE
 
   -------         MODULE        PUTCHAR
-  C:2C61H         PUBLIC        _PUTCHAR
+  C:3197H         PUBLIC        _PUTCHAR
   -------         ENDMOD        PUTCHAR
 
   -------         MODULE        ?C?UIDIV
   C:08CBH         PUBLIC        ?C?UIDIV
   -------         ENDMOD        ?C?UIDIV
 
-Program Size: data=19.1 xdata=591 code=11600
+Program Size: data=19.1 xdata=591 code=12935
 LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)

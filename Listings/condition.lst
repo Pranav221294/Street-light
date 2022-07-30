@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 1   
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 11:10:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE CONDITION
 OBJECT MODULE PLACED IN .\Objects\condition.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\condition.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\I
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\condition.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\I
                     -nclude;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\condition.lst) TABS(2) OBJECT(.\Objects\condit
                     -ion.obj)
 
@@ -62,7 +62,7 @@ line level    source
   51   6                      // printf("B3\n");
   52   6                   
   53   6                     }
-C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 2   
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 11:10:22 PAGE 2   
 
   54   5                   if(BAT_VOLT >=14.50)
   55   5                     {
@@ -126,10 +126,10 @@ line level    source
  113          //////////////////////////////////////////////////////////////////////////////
 
 
-C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 10:29:30 PAGE 3   
+C51 COMPILER V9.60.0.0   CONDITION                                                         07/28/2022 11:10:22 PAGE 3   
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    355    ----
+   CODE SIZE        =    361    ----
    CONSTANT SIZE    =      6    ----
    XDATA SIZE       =      1    ----
    PDATA SIZE       =   ----    ----

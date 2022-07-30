@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 10:29:28 PAGE 1   
+C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 11:10:20 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE DELAY
 OBJECT MODULE PLACED IN .\Objects\delay.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\delay.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Inc
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\delay.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Inc
                     -lude;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\delay.lst) TABS(2) OBJECT(.\Objects\delay.obj)
 
 line level    source
@@ -62,7 +62,7 @@ line level    source
   44   2            clr_TCON_TR0;                       //Stop Timer0
   45   2            u16CNT --;
   46   2          }
-C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 10:29:28 PAGE 2   
+C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 11:10:20 PAGE 2   
 
   47   1      //    clr_TCON_TR0;                                     //Stop Timer0
   48   1      }
@@ -126,7 +126,7 @@ line level    source
  102   1        
  103   1          SFRS = 0x00;
  104   1          switch (u16TMDIV)
-C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 10:29:28 PAGE 3   
+C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 11:10:20 PAGE 3   
 
  105   1          {
  106   2            case 1:T2MOD&=0x8F; break;
@@ -190,7 +190,7 @@ line level    source
  160   2            case 128:T3CON&=0xF8;T3CON|=0x07; break;
  161   2          }
  162   1          TL3TMP = LOBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u8TMDIV));
-C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 10:29:28 PAGE 4   
+C51 COMPILER V9.60.0.0   DELAY                                                             07/28/2022 11:10:20 PAGE 4   
 
  163   1          TH3TMP = HIBYTE(65536-((u32SYSCLK/1000000)*u32DLYUnit/u8TMDIV));
  164   1          while (u16CNT != 0)
@@ -228,7 +228,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1165    ----
+   CODE SIZE        =   1189    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----      43
    PDATA SIZE       =   ----    ----

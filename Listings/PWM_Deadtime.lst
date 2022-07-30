@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 10:29:31 PAGE 1   
+C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 11:10:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PWM_DEADTIME
 OBJECT MODULE PLACED IN .\Objects\PWM_Deadtime.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\PWM_Deadtime.C LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Devic
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\PWM_Deadtime.C LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Devic
                     -e\Include;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\PWM_Deadtime.lst) TABS(2) OBJECT(.\Objects\
                     -PWM_Deadtime.obj)
 
@@ -62,7 +62,7 @@ line level    source
   38          ///////////////////////////////////////////////////
   39          void printing_param();
   40          
-C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 10:29:31 PAGE 2   
+C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 11:10:23 PAGE 2   
 
   41          //////////////////////////////////////////////////
   42          
@@ -126,7 +126,7 @@ line level    source
  100          void printing_param()
  101          {
  102   1        
-C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 10:29:31 PAGE 3   
+C51 COMPILER V9.60.0.0   PWM_DEADTIME                                                      07/28/2022 11:10:23 PAGE 3   
 
  103   1           sprintf(BAT,"B_V:%0.2f ",BAT_VOLT);
  104   1           printf(BAT);
@@ -146,7 +146,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    467    ----
+   CODE SIZE        =    469    ----
    CONSTANT SIZE    =     65    ----
    XDATA SIZE       =     69    ----
    PDATA SIZE       =   ----    ----

@@ -1,0 +1,6 @@
+1. mppt with 21 v panel
+-->pwm and adc 
+2.battery to be used 12v liFe
+3.logging
+4.protection
+5.profile

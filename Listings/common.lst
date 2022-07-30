@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   COMMON                                                            07/28/2022 10:29:27 PAGE 1   
+C51 COMPILER V9.60.0.0   COMMON                                                            07/28/2022 11:10:20 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE COMMON
 OBJECT MODULE PLACED IN .\Objects\common.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\common.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\In
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\common.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\In
                     -clude;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\common.lst) TABS(2) OBJECT(.\Objects\common.obj
                     -)
 

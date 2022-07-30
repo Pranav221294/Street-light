@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 10:29:29 PAGE 1   
+C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 11:10:21 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE SYS
 OBJECT MODULE PLACED IN .\Objects\sys.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\sys.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Inclu
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\sys.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Inclu
                     -de;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\sys.lst) TABS(2) OBJECT(.\Objects\sys.obj)
 
 line level    source
@@ -62,7 +62,7 @@ line level    source
   45   1          IAPAH = 0x00;
   46   1          IAPCN = READ_UID;
   47   1          set_IAPTRG_IAPGO;
-C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 10:29:29 PAGE 2   
+C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 11:10:21 PAGE 2   
 
   48   1          hircmap0 = IAPFD;
   49   1          IAPAL++;
@@ -126,7 +126,7 @@ line level    source
  107   2              ClockSwitch(FSYS_LIRC);                 // LIRC always on switch system to LIRC
  108   2              clr_CKEN_HIRCEN;                        // Disable HIRC if needed 
  109   2          break;
-C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 10:29:29 PAGE 3   
+C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 11:10:21 PAGE 3   
 
  110   2          
  111   2          /***** ECLK enable part clock in with P3.0 *****/ 
@@ -190,7 +190,7 @@ line level    source
  169   2              clr_CKSWT_OSC0;
  170   2          break;
  171   2          /***** ECLK P30 Disable part ******/
-C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 10:29:29 PAGE 4   
+C51 COMPILER V9.60.0.0   SYS                                                               07/28/2022 11:10:21 PAGE 4   
 
  172   2          case FSYS_OSCIN_P30:
  173   2              set_CKSWT_ECLKST;
@@ -202,7 +202,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    517    ----
+   CODE SIZE        =    572    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =   ----    ----
    PDATA SIZE       =   ----    ----

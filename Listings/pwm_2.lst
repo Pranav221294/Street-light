@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 10:29:30 PAGE 1   
+C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 11:10:23 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE PWM_2
 OBJECT MODULE PLACED IN .\Objects\pwm_2.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\pwm_2.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Inclu
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\pwm_2.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Inclu
                     -de;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\pwm_2.lst) TABS(2) OBJECT(.\Objects\pwm_2.obj)
 
 line level    source
@@ -62,7 +62,7 @@ line level    source
   52   1        PWMPH = ((value & 0xFF00) >> 8);
   53   1      }
   54          
-C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 10:29:30 PAGE 2   
+C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 11:10:23 PAGE 2   
 
   55          
   56          void set_PWM0(unsigned int value)
@@ -126,7 +126,7 @@ line level    source
  114   1      //        PWM2L = 0x5A;
  115   1            
  116   1              PWM23_DEADTIME_ENABLE ;
-C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 10:29:30 PAGE 3   
+C51 COMPILER V9.60.0.0   PWM_2                                                             07/28/2022 11:10:23 PAGE 3   
 
  117   1              PWM_DEAD_TIME_VALUE(64);// 64 = 4us,32 = 2us,160 = 10 us
  118   1            

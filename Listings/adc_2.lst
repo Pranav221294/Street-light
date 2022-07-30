@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 1   
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 11:10:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE ADC_2
 OBJECT MODULE PLACED IN .\Objects\adc_2.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\adc_2.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Inclu
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\adc_2.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Inclu
                     -de;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\adc_2.lst) TABS(2) OBJECT(.\Objects\adc_2.obj)
 
 line level    source
@@ -62,7 +62,7 @@ line level    source
   52          ///////////////////main ADC single channel selection read//////// 
   53          unsigned int ADC_read(unsigned char Channel)
   54          { 
-C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 2   
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 11:10:22 PAGE 2   
 
   55   1        register unsigned int value = 0x0000;
   56   1        (ADCCON0)&=~(0xf);//Flush the chanel select
@@ -126,7 +126,7 @@ line level    source
  114   1        Temperature =Average_Current_Value(4);//Temperature
  115   1        AverageADC_CHG =0;
  116   1        BAT_VOLT = (Average_Current_Value(5)*Battery_Factor)-0.20;//Battery Voltage
-C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 10:29:30 PAGE 3   
+C51 COMPILER V9.60.0.0   ADC_2                                                             07/28/2022 11:10:22 PAGE 3   
 
  117   1        AverageADC_CHG =0;
  118   1        SPV_VOLT = Average_Current_Value(6)*Voltage_Factor;//Solar Panel
@@ -158,7 +158,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1443    ----
+   CODE SIZE        =   1446    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =     62       1
    PDATA SIZE       =   ----    ----

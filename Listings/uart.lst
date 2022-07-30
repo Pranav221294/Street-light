@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 10:29:29 PAGE 1   
+C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 11:10:21 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE UART
 OBJECT MODULE PLACED IN .\Objects\uart.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\uart.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Device\Incl
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE StdDriver\src\uart.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Incl
                     -ude;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\uart.lst) TABS(2) OBJECT(.\Objects\uart.obj)
 
 line level    source
@@ -62,7 +62,7 @@ line level    source
   42          void SerialPort1_ISR(void) interrupt 15
   43          {
   44   1          _push_(SFRS);
-C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 10:29:29 PAGE 2   
+C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 11:10:21 PAGE 2   
 
   45   1        
   46   1          if (RI_1)
@@ -126,7 +126,7 @@ line level    source
                   switch (UARTPort)
                   {
                     case UART0:
-C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 10:29:29 PAGE 3   
+C51 COMPILER V9.60.0.0   UART                                                              07/28/2022 11:10:21 PAGE 3   
 
                       while (!RI);
                       c = SBUF;
@@ -164,7 +164,7 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    417    ----
+   CODE SIZE        =    569    ----
    CONSTANT SIZE    =   ----    ----
    XDATA SIZE       =      2       9
    PDATA SIZE       =   ----    ----

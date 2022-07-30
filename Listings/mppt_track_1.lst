@@ -1,9 +1,9 @@
-C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 1   
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 11:10:22 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MPPT_TRACK_1
 OBJECT MODULE PLACED IN .\Objects\mppt_track_1.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\mppt_track_1.c LARGE OPTIMIZE(8,SPEED) BROWSE INCDIR(.\Devic
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\mppt_track_1.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Devic
                     -e\Include;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\mppt_track_1.lst) TABS(2) OBJECT(.\Objects\
                     -mppt_track_1.obj)
 
@@ -62,14 +62,14 @@ line level    source
   51   4                  //printf("Check1");
   52   4                if ( SPV_PWR > CSP )
   53   4                {
-C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 2   
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 11:10:22 PAGE 2   
 
-  54   5      //            printf("power up\n");
-  55   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-  56   5      //            printf(PWR_1);
+  54   5                  printf("power up\n");
+  55   5                  sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+  56   5                  printf(PWR_1);
   57   5            
-  58   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-  59   5      //            printf(CSP_1);        
+  58   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+  59   5                  printf(CSP_1);        
   60   5                  CSP = 0;
   61   5                  CSP = SPV_PWR;
   62   5                  PWM++;
@@ -85,20 +85,20 @@ line level    source
   72   4                {
   73   5                  
   74   5                //  printf("Check2\n");
-  75   5      //            printf("Power down\n  ");
-  76   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
-  77   5      //            printf(PWR_1);
+  75   5                  printf("Power down\n  ");
+  76   5                  sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+  77   5                  printf(PWR_1);
   78   5            
-  79   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
-  80   5      //            printf(CSP_1);
+  79   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+  80   5                  printf(CSP_1);
   81   5                  
   82   5                  
   83   5                  CSP = SPV_PWR;
   84   5                  PWM--;
   85   5                  set_PWM2(PWM);
   86   5                  set_PWMCON0_PWMRUN;
-  87   5      //            sprintf(PWM_1,"PWM:%d \n ",PWM);
-  88   5      //            printf(PWM_1);
+  87   5                  sprintf(PWM_1,"PWM:%d \n ",PWM);
+  88   5                  printf(PWM_1);
   89   5                  mppt_state = RETRY_PLUS;            
   90   5                }
   91   4              }
@@ -107,10 +107,10 @@ line level    source
   94   3              {
   95   4                 set_PWM2(PWM);
   96   4                  set_PWMCON0_PWMRUN;
-  97   4                //printf("Fix\n");
+  97   4                printf("Fix\n");
   98   4                CSP = SPV_PWR;
-  99   4      //            sprintf(PWM_1,"PWM:%d \n ",PWM);
- 100   4      //            printf(PWM_1);
+  99   4                  sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 100   4                  printf(PWM_1);
  101   4                MPPT_RETRY++;
  102   4              
  103   4                if ( MPPT_RETRY > 500 )
@@ -126,7 +126,7 @@ line level    source
  113   5                    mppt_state = RETRY_MINUS;
  114   5                    MPPT_RETRY = 0;
  115   5                }
-C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 3   
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 11:10:22 PAGE 3   
 
  116   4              }
  117   3              break;
@@ -135,39 +135,39 @@ line level    source
  120   4                //  printf("RETRY_PLUS\n");
  121   4                  if ( SPV_PWR > CSP )
  122   4                  {
- 123   5      //             printf("RETRY_PLUS SPV_PWR > CSP ");
- 124   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
- 125   5      //            printf(PWR_1);
+ 123   5                   printf("RETRY_PLUS SPV_PWR > CSP ");
+ 124   5                  sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 125   5                  printf(PWR_1);
  126   5            
- 127   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
- 128   5      //            printf(CSP_1);
+ 127   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 128   5                  printf(CSP_1);
  129   5                
  130   5                    
  131   5                    CSP = SPV_PWR;
  132   5                    PWM--;
- 133   5                  //  printf("RETRY_PLUS1\n");
+ 133   5                    printf("RETRY_PLUS1\n");
  134   5                    
  135   5                      set_PWM2(PWM);
  136   5                    set_PWMCON0_PWMRUN;
  137   5                    
- 138   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
- 139   5      //              printf(PWM_1);
+ 138   5                    sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 139   5                    printf(PWM_1);
  140   5                    mppt_state = RETRY_PLUS;
  141   5                  }
  142   4                 if ( SPV_PWR < CSP )
  143   4                  {
- 144   5      //            printf("RETRY_PLUS SPV_PWR < CSP ");
- 145   5      //            sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
- 146   5      //            printf(PWR_1);
- 147   5      //      
- 148   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
- 149   5      //            printf(CSP_1);
+ 144   5                  printf("RETRY_PLUS SPV_PWR < CSP ");
+ 145   5                  sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 146   5                  printf(PWR_1);
+ 147   5            
+ 148   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 149   5                  printf(CSP_1);
  150   5                 
  151   5                    
  152   5                    CSP = SPV_PWR;
  153   5                    PWM++;
- 154   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
- 155   5      //              printf(PWM_1);
+ 154   5                    sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 155   5                    printf(PWM_1);
  156   5                    
  157   5                  set_PWM2(PWM);
  158   5                    set_PWMCON0_PWMRUN;
@@ -186,17 +186,17 @@ line level    source
  171   5                    printf("RETRY_Minus SPV_PWR > CSP  ");
  172   5                    sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
  173   5                   printf(PWR_1);
- 174   5      //      
- 175   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
- 176   5      //            printf(CSP_1);
+ 174   5            
+ 175   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 176   5                  printf(CSP_1);
  177   5                    
-C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 4   
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 11:10:22 PAGE 4   
 
  178   5                    
  179   5                    set_PWM2(PWM);
  180   5                   set_PWMCON0_PWMRUN;
- 181   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
- 182   5      //              printf(PWM_1);
+ 181   5                    sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 182   5                    printf(PWM_1);
  183   5                    
  184   5                    mppt_state = RETRY_MINUS;
  185   5                  }
@@ -206,14 +206,14 @@ line level    source
  189   5                    
  190   5                  CSP = SPV_PWR;
  191   5                    PWM++;    
- 192   5      //              printf("RETRY_Minus SPV_PWR < CSP ");
- 193   5      //              sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
- 194   5      //             printf(PWR_1);
+ 192   5                    printf("RETRY_Minus SPV_PWR < CSP ");
+ 193   5                    sprintf(PWR_1,"SPV_PWR:%0.2f  ",SPV_PWR);
+ 194   5                   printf(PWR_1);
  195   5            
- 196   5      //            sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
- 197   5      //            printf(CSP_1);
- 198   5      //              sprintf(PWM_1,"PWM:%d \n ",PWM);
- 199   5      //              printf(PWM_1);
+ 196   5                  sprintf(CSP_1,"CSP_PWR:%0.2f ",CSP);
+ 197   5                  printf(CSP_1);
+ 198   5                    sprintf(PWM_1,"PWM:%d \n ",PWM);
+ 199   5                    printf(PWM_1);
  200   5                     set_PWM2(PWM);
  201   5                    set_PWMCON0_PWMRUN;             
  202   5                    mppt_state = RETRY_PLUS;          
@@ -254,7 +254,7 @@ line level    source
  237   1          PWM++;
  238   1          PWM++;
  239   1      
-C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 10:29:30 PAGE 5   
+C51 COMPILER V9.60.0.0   MPPT_TRACK_1                                                      07/28/2022 11:10:22 PAGE 5   
 
  240   1        
  241   1        
@@ -275,8 +275,8 @@ line level    source
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =   1061    ----
-   CONSTANT SIZE    =     61    ----
+   CODE SIZE        =   2009    ----
+   CONSTANT SIZE    =    197    ----
    XDATA SIZE       =     73       1
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
