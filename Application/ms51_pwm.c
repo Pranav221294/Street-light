@@ -1,6 +1,6 @@
 #include "ms51_pwm.h"
 #include "MS51_16K.h"
-static int cached_dead_time;
+static unsigned int cached_dead_time;
 
 static void PWM_DEAD_TIME_VALUE(unsigned int  DeadTimeData)
 {
@@ -59,6 +59,7 @@ void ms51_pwm_start(void)
 {
 	PWM3_P00_OUTPUT_ENABLE;
     PWM2_P10_OUTPUT_ENABLE;
+    PWM23_DEADTIME_ENABLE;
     PWM_DEAD_TIME_VALUE(cached_dead_time);
     set_PWMCON0_LOAD;
     set_PWMCON0_PWMRUN;
