@@ -1,0 +1,3 @@
+#ifndef _BATT_CHARGER_CONFIG_
+#define _BATT_CHARGER_CONFIG_
+#endif
