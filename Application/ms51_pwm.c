@@ -73,6 +73,6 @@ void ms51_pwm_stop(void)
 }
 void ms51_pwm_dead_time(unsigned int DeadTimeData)
 {
-    cached_dead_time=DeadTimeData
+    cached_dead_time=DeadTimeData;
     PWM_DEAD_TIME_VALUE(DeadTimeData);
 }

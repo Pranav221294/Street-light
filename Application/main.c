@@ -1,7 +1,15 @@
 #include <stdio.h>
 #include "MS51_16K.h"
 #include "ms51_pwm.h"
+#include "analog_sense.h"
+//#include "log.h"
 #define UART_BAUD_RATE 115200
+
+xdata char BAT[10],SPV[10],LODV[10],Temp[10],Chg_c[10],disChg_c[10],Load_input[10];
+
+xdata int print_delay = 0;
+
+void printing_param();
 
 static void ms51_gpio_config(void)
 {
@@ -77,9 +85,42 @@ void main(void)
 	//uart init 
 	ms51_uart_init();
 	// test
-	ms51_pwm_set_duty(50);
-	ms51_pwm_start();
+	//ms51_pwm_set_duty(50);
+	//ms51_pwm_start();
 	while (1)
 	{
+		analog_sense_event_loop();
+		
+		 print_delay++;
+   if(print_delay>500)
+	 {
+		 print_delay =0;
+	   printing_param();
+	 
+	 }
+		
 	}
+}
+
+
+void printing_param()
+{
+	sprintf(BAT,"B_V:%d ",analog_sense_get_battery_voltage());
+	printf(BAT);
+ // LOG(BAT);
+     //sprintf(BAT,"B_V:%d ",analog_sense_get_battery_voltage);
+		// printf(BAT);
+//		 sprintf(SPV,"S_V:%0.2f ",SPV_VOLT);
+//		 printf(SPV);
+//		 sprintf(LODV,"L_V:%0.2f ",Load_Voltage);
+//		 printf(LODV);
+//		 sprintf(Temp,"Temp:%d ",Temperature);
+//		 printf(Temp);
+//		 sprintf(Chg_c,"CHG:%0.2f ",CHG_CRT); 
+//		 printf(Chg_c);
+//		 sprintf(disChg_c,"DCHG:%0.2f",DCHG_CRT);
+//		 printf(disChg_c);
+//     sprintf(Load_input,"Load_input:%0.2f\n",Load_input_power);
+//		 printf(Load_input);
+
 }

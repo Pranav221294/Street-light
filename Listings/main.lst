@@ -1,115 +1,149 @@
-C51 COMPILER V9.60.0.0   MAIN                                                              07/30/2022 16:06:03 PAGE 1   
+C51 COMPILER V9.60.0.0   MAIN                                                              08/02/2022 10:42:08 PAGE 1   
 
 
 C51 COMPILER V9.60.0.0, COMPILATION OF MODULE MAIN
 OBJECT MODULE PLACED IN .\Objects\main.obj
-COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\main.c LARGE OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Includ
-                    -e;.\StdDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE Application\main.c OPTIMIZE(7,SPEED) BROWSE INCDIR(.\Device\Include;.\St
+                    -dDriver\inc;.\Application) DEBUG OBJECTEXTEND PRINT(.\Listings\main.lst) TABS(2) OBJECT(.\Objects\main.obj)
 
 line level    source
 
    1          #include <stdio.h>
    2          #include "MS51_16K.h"
    3          #include "ms51_pwm.h"
-   4          
-   5          static void ms51_gpio_config(void)
-   6          {
-   7   1         P00_PUSHPULL_MODE;
-   8   1         P10_PUSHPULL_MODE;
-   9   1         P00 = 0;
-  10   1         P10 = 0;
-  11   1      }
-  12          static void ms51_adc_config(void)
-  13          {
-  14   1        /* Configuring channel*/
-  15   1        P03_INPUT_MODE; // SPV_pin
-  16   1        P04_INPUT_MODE; // Battery Pin
-  17   1        P11_INPUT_MODE; // Load Pin
-  18   1        P05_INPUT_MODE; // Temp Pin
-  19   1        P30_INPUT_MODE; // Charging Pin
-  20   1        P17_INPUT_MODE; // Discharging Pin
-  21   1      
-  22   1        ENABLE_ADC_CH4; // Temp
-  23   1        ENABLE_ADC_CH5; // Battery Voltage
-  24   1        ENABLE_ADC_CH6; // Solar Voltage
-  25   1        ENABLE_ADC_CH7; // Load Voltage
-  26   1        ENABLE_ADC_CH0; // Discharging Pin
-  27   1        ENABLE_ADC_CH1; // Charging Pin
-  28   1        /* configuring adc periph*/
-  29   1        // ADCCON1 |= 0X30;   /* clock divider */
-  30   1        // ADCCON2 |= 0X0E;   /* AQT time */
-  31   1        // AUXR1 |= SET_BIT4; /* ADC clock low speed */
-  32   1        set_ADCCON1_ADCEN;
-  33   1        clr_ADCCON0_ADCF;
-  34   1      }
-  35          void PWM_DEAD_TIME_VALUE(unsigned int DeadTimeData)
-  36          {
-  37   1        unsigned char deadtmphigh, deadtmplow;
-  38   1        deadtmplow = DeadTimeData;
-  39   1        deadtmphigh = DeadTimeData >> 8;
-  40   1        BIT_TMP = EA;
-  41   1        EA = 0;
-  42   1        if (deadtmphigh == 0x01)
-  43   1        {
-  44   2          TA = 0xAA;
-  45   2          TA = 0x55;
-  46   2          PDTEN |= 0x10;
-  47   2        }
-  48   1        TA = 0xAA;
-  49   1        TA = 0x55;
-  50   1        PDTCNT = deadtmplow;
-  51   1        EA = BIT_TMP;
-  52   1      }
-  53          static void ms51_pwm_config(void)
-  54          {
-C51 COMPILER V9.60.0.0   MAIN                                                              07/30/2022 16:06:03 PAGE 2   
+   4          #include "analog_sense.h"
+   5          //#include "log.h"
+   6          #define UART_BAUD_RATE 115200
+   7          
+   8          xdata char BAT[10],SPV[10],LODV[10],Temp[10],Chg_c[10],disChg_c[10],Load_input[10];
+   9          
+  10          xdata int print_delay = 0;
+  11          
+  12          void printing_param();
+  13          
+  14          static void ms51_gpio_config(void)
+  15          {
+  16   1        /** uart pin */
+  17   1        P06_QUASI_MODE;
+  18   1        P07_QUASI_MODE;
+  19   1        /** pwm pin */
+  20   1        P00_PUSHPULL_MODE;
+  21   1        P10_PUSHPULL_MODE;
+  22   1        P00 = 0;
+  23   1        P10 = 0;
+  24   1      }
+  25          static void ms51_adc_config(void)
+  26          {
+  27   1        /* Configuring channel*/
+  28   1        P03_INPUT_MODE; // SPV_pin
+  29   1        P04_INPUT_MODE; // Battery Pin
+  30   1        P11_INPUT_MODE; // Load Pin
+  31   1        P05_INPUT_MODE; // Temp Pin
+  32   1        P30_INPUT_MODE; // Charging Pin
+  33   1        P17_INPUT_MODE; // Discharging Pin
+  34   1      
+  35   1        ENABLE_ADC_CH4; // Temp
+  36   1        ENABLE_ADC_CH5; // Battery Voltage
+  37   1        ENABLE_ADC_CH6; // Solar Voltage
+  38   1        ENABLE_ADC_CH7; // Load Voltage
+  39   1        ENABLE_ADC_CH0; // Discharging Pin
+  40   1        ENABLE_ADC_CH1; // Charging Pin
+  41   1        /* configuring adc periph*/
+  42   1        // ADCCON1 |= 0X30;   /* clock divider */
+  43   1        // ADCCON2 |= 0X0E;   /* AQT time */
+  44   1        // AUXR1 |= SET_BIT4; /* ADC clock low speed */
+  45   1        set_ADCCON1_ADCEN;
+  46   1        clr_ADCCON0_ADCF;
+  47   1      }
+  48          
+  49          static void ms51_pwm_config(void)
+  50          {
+  51   1        PWM3_P00_OUTPUT_ENABLE;
+  52   1        PWM2_P10_OUTPUT_ENABLE;
+  53   1        /*use system clock for pwm*/
+  54   1        PWM_CLOCK_FSYS;
+C51 COMPILER V9.60.0.0   MAIN                                                              08/02/2022 10:42:08 PAGE 2   
 
-  55   1        PWM3_P00_OUTPUT_ENABLE;
-  56   1        PWM2_P10_OUTPUT_ENABLE;
-  57   1        /*use system clock for pwm*/
-  58   1        PWM_CLOCK_FSYS;
-  59   1        /*Clock is */
-  60   1        PWM_CLOCK_DIV_2;
-  61   1        /* pwm is in complementry mode*/
-  62   1        PWM_COMPLEMENTARY_MODE;
-  63   1        /* Enable Dead time controll on channel 0 and 1*/
-  64   1        PWM23_DEADTIME_ENABLE;
-  65   1        /* Insert the amount of dead time*/
-  66   1        // Dead time       = 47 <PDTEN.4+PDTCNT[7:0]>/Fsys = 47/Fsys = 47/24000000 = 2 us (max value)
-  67   1        PWM_DEAD_TIME_VALUE(47);
-  68   1        /* Set PWM Period*/
-  69   1        // PWM frequency   = Fpwm/((PWMPH,PWMPL)+1) = (16MHz/8)/(0x7CF+1) = 1KHz (1ms)
-  70   1        // PWM0 high duty  = PWM0H,PMW0L = 0x03CF = 1/2 PWM period
-  71   1        PWMPH = 0x02;
-  72   1        PWMPL = 0x57;
-  73   1      }
-  74          static void ms51_uart_init(void)
-  75          {
-  76   1        //
-  77   1      }
-  78          void main(void)
-  79          {
-  80   1        // init cloack sys according to app
-  81   1        MODIFY_HIRC(HIRC_24);
-  82   1        ms51_gpio_config();
-  83   1        // init adc
-  84   1        ms51_adc_config();
-  85   1        // init pwm
-  86   1        ms51_pwm_config();
-  87   1        //test 
-  88   1        ms51_pwm_set_duty(50);
-  89   1        ms51_pwm_start();
+  55   1        /*Clock is */
+  56   1        PWM_CLOCK_DIV_2;
+  57   1        /* pwm is in complementry mode*/
+  58   1        PWM_COMPLEMENTARY_MODE;
+  59   1        /* Enable Dead time controll on channel 0 and 1*/
+  60   1        PWM23_DEADTIME_ENABLE;
+  61   1        /* Insert the amount of dead time*/
+  62   1        // Dead time       = 47 <PDTEN.4+PDTCNT[7:0]>/Fsys = 47/Fsys = 47/24000000 = 2 us (max value)
+  63   1        //PWM_DEAD_TIME_VALUE(47);
+  64   1        ms51_pwm_dead_time(47);
+  65   1        /* Set PWM Period*/
+  66   1        // PWM frequency   = Fpwm/((PWMPH,PWMPL)+1) = (16MHz/8)/(0x7CF+1) = 1KHz (1ms)
+  67   1        // PWM0 high duty  = PWM0H,PMW0L = 0x03CF = 1/2 PWM period
+  68   1        PWMPH = 0x02;
+  69   1        PWMPL = 0x57;
+  70   1      }
+  71          static void ms51_uart_init(void)
+  72          {
+  73   1        UART_Open(24000000, UART0_Timer3, UART_BAUD_RATE);
+  74   1        ENABLE_UART0_PRINTF;
+  75   1      }
+  76          void main(void)
+  77          {
+  78   1        // init cloack sys according to app
+  79   1        MODIFY_HIRC(HIRC_24);
+  80   1        ms51_gpio_config();
+  81   1        // init adc
+  82   1        ms51_adc_config();
+  83   1        // init pwm
+  84   1        ms51_pwm_config();
+  85   1        //uart init 
+  86   1        ms51_uart_init();
+  87   1        // test
+  88   1        //ms51_pwm_set_duty(50);
+  89   1        //ms51_pwm_start();
   90   1        while (1)
   91   1        {
-  92   2      
-  93   2        }
-  94   1      }
+  92   2          analog_sense_event_loop();
+  93   2          
+  94   2           print_delay++;
+  95   2         if(print_delay>500)
+  96   2         {
+  97   3           print_delay =0;
+  98   3           printing_param();
+  99   3         
+ 100   3         }
+ 101   2          
+ 102   2        }
+ 103   1      }
+ 104          
+ 105          
+ 106          void printing_param()
+ 107          {
+ 108   1        sprintf(BAT,"B_V:%d ",analog_sense_get_battery_voltage());
+ 109   1        printf(BAT);
+ 110   1       // LOG(BAT);
+ 111   1           //sprintf(BAT,"B_V:%d ",analog_sense_get_battery_voltage);
+ 112   1          // printf(BAT);
+ 113   1      //     sprintf(SPV,"S_V:%0.2f ",SPV_VOLT);
+ 114   1      //     printf(SPV);
+ 115   1      //     sprintf(LODV,"L_V:%0.2f ",Load_Voltage);
+ 116   1      //     printf(LODV);
+C51 COMPILER V9.60.0.0   MAIN                                                              08/02/2022 10:42:08 PAGE 3   
+
+ 117   1      //     sprintf(Temp,"Temp:%d ",Temperature);
+ 118   1      //     printf(Temp);
+ 119   1      //     sprintf(Chg_c,"CHG:%0.2f ",CHG_CRT); 
+ 120   1      //     printf(Chg_c);
+ 121   1      //     sprintf(disChg_c,"DCHG:%0.2f",DCHG_CRT);
+ 122   1      //     printf(disChg_c);
+ 123   1      //     sprintf(Load_input,"Load_input:%0.2f\n",Load_input_power);
+ 124   1      //     printf(Load_input);
+ 125   1      
+ 126   1      }
 
 
 MODULE INFORMATION:   STATIC OVERLAYABLE
-   CODE SIZE        =    697    ----
-   CONSTANT SIZE    =   ----    ----
-   XDATA SIZE       =   ----    ----
+   CODE SIZE        =    803    ----
+   CONSTANT SIZE    =      8    ----
+   XDATA SIZE       =     72    ----
    PDATA SIZE       =   ----    ----
    DATA SIZE        =   ----    ----
    IDATA SIZE       =   ----    ----

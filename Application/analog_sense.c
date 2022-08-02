@@ -1,6 +1,7 @@
 #include "analog_sense.h"
 #include "MS51_16K.h"
 #include "adc_read.h"
+#define static  
 enum analog_sense_e
 {
     ANALOG_SENSE_BATTERY_VOLTAGE = 0,
@@ -20,21 +21,21 @@ struct analog_sense_meta
 };
 
 /* static raw buffer for analog sense*/
-static uint16_t _bv_buff[ANALOG_SENSE_BATTERY_VOLTAGE_BUFF_SIZE];
-static uint16_t _pv_buff[ANALOG_SENSE_PV_VOLTAGE_BUFF_SIZE];
-static uint16_t _bc_buff[ANALOG_SENSE_BATT_CURRENT_BUFF_SIZE];
-static uint16_t _pvc_buff[ANALOG_SENSE_PV_CURRRNT_BUFF_SIZE];
+static xdata uint16_t _bv_buff[ANALOG_SENSE_BATTERY_VOLTAGE_BUFF_SIZE];
+static xdata uint16_t _pv_buff[ANALOG_SENSE_PV_VOLTAGE_BUFF_SIZE];
+static xdata uint16_t _bc_buff[ANALOG_SENSE_BATT_CURRENT_BUFF_SIZE];
+static xdata uint16_t _pvc_buff[ANALOG_SENSE_PV_CURRRNT_BUFF_SIZE];
 /*analog sensing meta array*/
-struct analog_sense_meta _as_meta[ANALOG_SENSE_SENTIMEL] =
-    {
-        [ANALOG_SENSE_BATTERY_VOLTAGE] = {
+xdata struct analog_sense_meta _as_meta[ANALOG_SENSE_SENTIMEL]=
+{
+        {
             ANALOG_SENSE_BATTERY_VOLTAGE_CHANNEL, 0, _bv_buff, ANALOG_SENSE_BATTERY_VOLTAGE_BUFF_SIZE, 0},
-        [ANALOG_SENSE_PV_VOLTAGE] = {ANALOG_SENSE_PV_VOLTAGE_CHANNEL, 0, _pv_buff, ANALOG_SENSE_PV_VOLTAGE_BUFF_SIZE, 0},
-        [ANALOG_SENSE_BATT_CURRENT] = {ANALOG_SENSE_BATT_CURRENT_CHANNEL, 0, _bc_buff, ANALOG_SENSE_BATT_CURRENT_BUFF_SIZE, 0},
-        [ANALOG_SENSE_PV_CURRENT] = {ANALOG_SENSE_PV_CURRRNT_CHANNEL, 0, _pvc_buff, ANALOG_SENSE_PV_CURRRNT_BUFF_SIZE, 0}};
+  {ANALOG_SENSE_PV_VOLTAGE_CHANNEL, 0, _pv_buff, ANALOG_SENSE_PV_VOLTAGE_BUFF_SIZE, 0},
+    {ANALOG_SENSE_BATT_CURRENT_CHANNEL, 0, _bc_buff, ANALOG_SENSE_BATT_CURRENT_BUFF_SIZE, 0},
+        {ANALOG_SENSE_PV_CURRRNT_CHANNEL, 0, _pvc_buff, ANALOG_SENSE_PV_CURRRNT_BUFF_SIZE, 0}};
 
 /*Sensing index*/
-static int _analog_sense_index;
+static xdata int _analog_sense_index;
 int analog_sense_get_battery_voltage(void)
 {
     return _as_meta[ANALOG_SENSE_BATTERY_VOLTAGE].avg_value;
